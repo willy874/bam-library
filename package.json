@@ -1,0 +1,21 @@
+{
+  "name": "bam-library",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "sh ./scripts/test.sh",
+    "reinstall": "sh ./scripts/reinstall.sh"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@nrwl/workspace": "^17.0.1",
+    "@nx/devkit": "^17.0.1",
+    "@nx/eslint-plugin": "^17.0.1",
+    "@nx/js": "^17.0.1",
+    "@nx/storybook": "^17.0.1",
+    "nx": "^17.0.1"
+  },
+  "devDependencies": {
+    "@nrwl/js": "^17.0.1"
+  }
+}
