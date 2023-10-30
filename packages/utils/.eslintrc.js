@@ -18,5 +18,12 @@ module.exports = {
         browser: true,
       },
     },
+    {
+      files: ['packages/common/*'],
+      env: {
+        node: true,
+        browser: true,
+      },
+    },
   ],
 };

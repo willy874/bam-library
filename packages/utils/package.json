@@ -9,13 +9,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@types/lodash": "^4.14.194",
-    "events": "^3.3.0"
+    "events": "^3.3.0",
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
     "@bam-library/eslint-config": "workspace:*",
     "@bam-library/eslint-plugin": "workspace:*",
+    "@bam-library/typescript-config": "workspace:*",
+    "@types/lodash": "^4.14.200",
     "eslint": "^8.52.0",
-    "lodash": "^4.17.21"
+    "typescript": "^5.2.2"
   }
 }

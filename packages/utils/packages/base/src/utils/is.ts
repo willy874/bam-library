@@ -5,7 +5,7 @@ export function isFiniteNumber(value: unknown): value is number {
   return typeof value === 'number' && Number.isFinite(value);
 }
 
-export function isIterator<T = unknown>(value: unknown): value is IterableIterator<T> {
+export function isIterator<T extends object>(value: unknown): value is IterableIterator<T> {
   return Boolean(typeof value === 'object' && value && typeof (value as any)[Symbol.iterator] === 'function');
 }
 
@@ -17,7 +17,7 @@ export function isEmptyNumber(value: unknown): value is number {
   return typeof value === 'number' && isNaN(value);
 }
 
-export function isEmptyObject(value: unknown): value is object & Record<any, undefined> {
+export function isEmptyObject<T>(value: T): value is T & Record<any, undefined> {
   if (typeof value === 'object' && value) {
     /** Array */
     if ('length' in value && value['length'] === 0) {

@@ -32,6 +32,14 @@ root=$(pwd)
 
 reinstall $root
 
+for dir in $root/apps/* ; do
+  [ -L "${dir}" ] && continue
+  reinstall $dir
+done
+for dir in $root/modules/* ; do
+  [ -L "${dir}" ] && continue
+  reinstall $dir
+done
 for dir in $root/packages/* ; do
   [ -L "${dir}" ] && continue
   reinstall $dir

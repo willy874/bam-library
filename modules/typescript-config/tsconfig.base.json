@@ -1,22 +1,25 @@
 {
-  "compileOnSave": false,
   "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "lib": ["ESNext"],
+    "moduleResolution": "node",
     "sourceMap": true,
     "declaration": false,
-    "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "esModuleInterop": true,
     "importHelpers": true,
     "resolveJsonModule": true,
     "allowJs": true,
-    "target": "ESNext",
-    "lib": ["ESNext"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "noImplicitAny": true
+    "noImplicitAny": true,
+    "useDefineForClassFields": true,
+    "strictNullChecks": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true
   },
   "exclude": ["node_modules"]
 }
