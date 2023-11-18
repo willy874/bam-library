@@ -1,7 +1,12 @@
 export function eachElementTree(
-  treeDatas: Node | Node[] | NodeListOf<ChildNode>,
+  treeDatas:
+    | Node
+    | Node[]
+    | {
+        [Symbol.iterator](): IterableIterator<Node>;
+      },
   callBack: (...args: any[]) => any,
-  parentNode = {}
+  parentNode = {},
 ) {
   const recursive = (element: Node) => {
     const newNode = callBack(element, parentNode) || element;
@@ -12,6 +17,8 @@ export function eachElementTree(
   if (treeDatas instanceof Node) {
     recursive(treeDatas);
   } else {
-    treeDatas.forEach(recursive);
+    for (const node of treeDatas) {
+      recursive(node);
+    }
   }
 }
