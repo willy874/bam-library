@@ -1,6 +1,15 @@
+import { getGlobalObject } from './global';
+
 export function uuid(hash?: string) {
-  const g = globalThis || window;
-  if (typeof g.crypto === 'object' && 'randomUUID' in g.crypto && !hash) {
+  const g = getGlobalObject();
+  if (
+    'crypto' in g &&
+    typeof g.crypto === 'object' &&
+    g.crypto &&
+    'randomUUID' in g.crypto &&
+    typeof g.crypto.randomUUID === 'function' &&
+    !hash
+  ) {
     return g.crypto.randomUUID();
   }
   if (!hash) hash = '0123456789abcdefg';

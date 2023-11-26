@@ -69,7 +69,7 @@ export function findNodeAll<T = any>(tree: any, func: AnyFunction, config: Parti
 export function findPath<T = any>(
   tree: any,
   func: AnyFunction,
-  config: Partial<TreeHelperConfig> = {}
+  config: Partial<TreeHelperConfig> = {},
 ): T | T[] | null {
   config = getConfig(config);
   const path: T[] = [];
@@ -115,7 +115,7 @@ export function findPathAll(tree: any, func: AnyFunction, config: Partial<TreeHe
   return result;
 }
 
-export function filter<T = any>(tree: T[], func: (n: T) => boolean, config: Partial<TreeHelperConfig> = {}): T[] {
+export function treeFilter<T = any>(tree: T[], func: (n: T) => boolean, config: Partial<TreeHelperConfig> = {}): T[] {
   config = getConfig(config);
   const children = config.children as string;
   function listFilter(list: T[]) {
@@ -129,7 +129,7 @@ export function filter<T = any>(tree: T[], func: (n: T) => boolean, config: Part
   return listFilter(tree);
 }
 
-export async function forEach<T = any>(tree: T[], func: (n: T) => any, config: Partial<TreeHelperConfig> = {}) {
+export async function treeForEach<T = any>(tree: T[], func: (n: T) => any, config: Partial<TreeHelperConfig> = {}) {
   config = getConfig(config);
   const list: any[] = [...tree];
   const { children } = config;
@@ -156,7 +156,7 @@ export function treeMap<T = any>(treeData: T[], opt: { children?: string; conver
  */
 export function treeMapEach(
   data: any,
-  { children = 'children', conversion }: { children?: string; conversion: AnyFunction }
+  { children = 'children', conversion }: { children?: string; conversion: AnyFunction },
 ) {
   const haveChildren = Array.isArray(data[children]) && data[children].length > 0;
   const conversionData = conversion(data) || {};
@@ -167,7 +167,7 @@ export function treeMapEach(
         treeMapEach(i, {
           children,
           conversion,
-        })
+        }),
       ),
     };
   } else {

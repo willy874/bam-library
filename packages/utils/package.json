@@ -10,12 +10,14 @@
   "license": "ISC",
   "dependencies": {
     "events": "^3.3.0",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "lodash-es": "^4.17.21"
   },
   "devDependencies": {
     "@bam-library/eslint-config": "workspace:*",
     "@bam-library/eslint-plugin": "workspace:*",
     "@bam-library/typescript-config": "workspace:*",
+    "@types/node": "^20.10.0",
     "@types/lodash": "^4.14.200",
     "eslint": "^8.52.0",
     "typescript": "^5.2.2"

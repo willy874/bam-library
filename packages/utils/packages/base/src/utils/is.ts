@@ -53,8 +53,8 @@ export function isSome(value1: unknown, value2: unknown): boolean {
   return Object.is(value1, value2);
 }
 
-export function isNotNull<T>(value: T | null): value is T {
-  return !isNull(value);
+export function isNotNull<T>(value?: T | null | undefined): value is T {
+  return !isNull(value) && typeof value !== 'undefined';
 }
 
 export function is<T extends ClassConstructor>(val: unknown, type: T): val is T {
