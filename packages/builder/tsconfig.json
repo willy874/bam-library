@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "baseUrl": ".",
+    "rootDir": ".",
+    "lib": ["ESNext", "ScriptHost"],
+    "paths": {
+      "@/*": ["packages/*"],
+      "@base/*": ["packages/base/*"],
+      "@browser/*": ["packages/browser/*"],
+      "@node/*": ["packages/node/*"],
+      "@common/*": ["packages/common/*"]
+    }
+  },
+  "extends": "./node_modules/@bam-library/typescript-config/tsconfig.base.json",
+  "include": ["src/**/*.ts", "src/**/**/*.d.ts"],
+  "exclude": ["node_modules", "dist"]
+}

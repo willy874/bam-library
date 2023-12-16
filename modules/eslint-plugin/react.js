@@ -1,5 +1,5 @@
 /**
- * @type {import('eslint').ESLint.Options}
+ * @type {import('@bam-library/eslint-config').ESLintConfigExport}
  */
 module.exports = {
   plugins: ['react'],
