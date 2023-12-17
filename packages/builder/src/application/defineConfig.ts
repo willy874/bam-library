@@ -74,7 +74,7 @@ export function defineConfig(
       devServer: isDev ? getDevServe(settings) : undefined,
       module: {
         rules: [
-          ...getJsLoaders({}, settings),
+          ...getJsLoaders(undefined, settings),
           {
             oneOf: [
               ...getIcssLoader(config.icss || {}, settings),
@@ -91,7 +91,6 @@ export function defineConfig(
         extensions: ['.ts', '.tsx', '.js', '.jsx', '.mjs', '.cjs'],
         alias: {
           '@': path.resolveRoot('src'),
-          src: path.resolveRoot('src'),
         },
       },
       target: 'web',

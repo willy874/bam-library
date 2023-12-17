@@ -88,9 +88,9 @@ function getSwcLoader(options: RuleSetRule, settings: DefaultSettings) {
   ];
 }
 
-export function getJsLoaders(options: JsLoaders, settings: DefaultSettings) {
+export function getJsLoaders(options: JsLoaders | undefined, settings: DefaultSettings) {
   if (options === undefined) {
-    return getSwcLoader(options, settings);
+    return getSwcLoader({}, settings);
   }
   if (Array.isArray(options)) {
     return options;

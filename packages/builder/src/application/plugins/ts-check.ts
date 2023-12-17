@@ -9,7 +9,7 @@ import { ForkTsCheckerWebpackPlugin } from '@/libs/webpack';
 export function getForkTsCheckerWebpackPlugin(config: ForkTsCheckerWebpackPluginOptions, settings: DefaultSettings) {
   const { isDev } = settings;
   return new ForkTsCheckerWebpackPlugin(
-    deepmerge(
+    deepmerge<ForkTsCheckerWebpackPluginOptions>(
       {
         async: isDev,
         typescript: {

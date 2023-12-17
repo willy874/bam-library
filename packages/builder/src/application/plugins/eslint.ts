@@ -9,7 +9,7 @@ import { ESLintWebpackPlugin } from '@/libs/webpack';
 export function getEslintPlugin(config: EslintWebpackPluginOptions, settings: DefaultSettings) {
   const { isDev, isProd } = settings;
   return new ESLintWebpackPlugin(
-    deepmerge(
+    deepmerge<EslintWebpackPluginOptions>(
       {
         extensions: ['js', 'mjs', 'jsx', 'ts', 'tsx'],
         eslintPath: require.resolve('eslint'),

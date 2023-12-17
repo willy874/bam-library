@@ -1,5 +1,4 @@
-import FS from 'node:fs';
-
+import * as fs from './fs';
 import { ARGS, CWD } from '@/constants';
 import { dotenv } from '@/libs/utils';
 
@@ -25,7 +24,7 @@ export function getArgv() {
 }
 
 export async function getEnvironment(match = '') {
-  const fileList = await FS.promises.readdir(CWD);
+  const fileList = await fs.promises.readdir(CWD);
   const envs = fileList.filter((p) => new RegExp(`^\\.env(\\.)?${match}$`).test(p));
   const src = resolveRoot(envs.find((p) => p) || '');
   if (src) {

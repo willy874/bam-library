@@ -8,13 +8,13 @@ import { webpack } from '@/libs/webpack';
 export function getModuleFederationPlugin(options: ModuleFederationWebpackPluginOptions, settings: DefaultSettings) {
   const { appName } = settings;
   const defaultPath = path.resolveRoot('src', 'web-components.ts');
-  const defaultExposes = fs.isFile(defaultPath)
+  const defaultExposes: ModuleFederationWebpackPluginOptions['exposes'] = fs.isFile(defaultPath)
     ? {
         './web-components': defaultPath,
       }
     : {};
   return new webpack.container.ModuleFederationPlugin(
-    deepmerge(
+    deepmerge<ModuleFederationWebpackPluginOptions>(
       {
         name: appName,
         filename: 'remoteEntry.js',

@@ -1,5 +1,5 @@
 export async function executeAsyncFunctions<T = any>(
-  funcs: ((param: T) => Promise<T>)[],
+  funcs: ((param: T) => Promise<T> | T)[],
   init: T,
   onError?: (error: any) => void,
 ) {

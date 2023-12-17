@@ -39,7 +39,7 @@ export function getPlugins(config: Config, settings: DefaultSettings) {
       ...provide,
     }),
     new HtmlWebpackPlugin(
-      deepmerge(
+      deepmerge<Config['htmlTemplate']>(
         {
           template: './public/index.html',
           publicPath: '/',
@@ -48,7 +48,7 @@ export function getPlugins(config: Config, settings: DefaultSettings) {
       ),
     ),
     new MiniCssExtractPlugin(
-      deepmerge(
+      deepmerge<Config['cssExtract']>(
         {
           filename: 'css/entry.[name].[hash].css',
           chunkFilename: 'css/chunk.[name].[hash].css',
@@ -58,12 +58,11 @@ export function getPlugins(config: Config, settings: DefaultSettings) {
       ),
     ),
     new DefinePlugin({
-      // 'process.env': JSON.stringify(exposeEnv),
       process: JSON.stringify({ env: exposeEnv }),
       ...define,
     }),
     new ProgressPlugin(
-      deepmerge(
+      deepmerge<Config['progress']>(
         {
           activeModules: true,
           entries: true,
@@ -73,9 +72,7 @@ export function getPlugins(config: Config, settings: DefaultSettings) {
           dependencies: false,
           dependenciesCount: 10000,
         },
-        {
-          ...progress,
-        },
+        progress,
       ),
     ),
     getCopyPlugin(copy),
