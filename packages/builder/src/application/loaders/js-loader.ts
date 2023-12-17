@@ -8,7 +8,7 @@ function getBabelLoader(_options: any, settings: DefaultSettings) {
   try {
     require('babel-loader');
   } catch (error) {
-    throw new Error('babel-loader is not found');
+    throw new Error('react, babel-loader is not found');
   }
   try {
     return [
@@ -38,7 +38,7 @@ function getBabelLoader(_options: any, settings: DefaultSettings) {
           babelrc: false,
           configFile: false,
           compact: false,
-          presets: [[require.resolve('babel-preset-react-app/dependencies'), { helpers: true }]],
+          presets: [[require.resolve('babel-preset-react-app'), { helpers: true }]],
           cacheDirectory: true,
           cacheCompression: false,
           sourceMaps: isDev,

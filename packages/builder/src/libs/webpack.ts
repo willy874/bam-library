@@ -17,7 +17,7 @@ import 'postcss-loader';
 import 'postcss-load-config';
 import 'sass';
 import 'sass-loader';
-import '@svgr/webpac';
+import '@svgr/webpack';
 import '@swc/core';
 import 'swc-loader';
 import 'postcss-flexbugs-fixes';

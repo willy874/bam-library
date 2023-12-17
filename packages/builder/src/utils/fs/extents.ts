@@ -41,10 +41,7 @@ export async function readFile(src: string) {
         `${ConsoleColors.FgRed}The path ${ConsoleColors.FgBlue}${src}${ConsoleColors.FgRed} is not define!${ConsoleColors.Reset}`,
       );
     }
-    if (/\.(c)?js$/.test(src)) {
-      return require(src);
-    }
-    if (/\.mjs$/.test(src)) {
+    if (/\.[cm]?js$/.test(src)) {
       return await import(`${src}`);
     }
     if (/^\.env/.test(src)) {
