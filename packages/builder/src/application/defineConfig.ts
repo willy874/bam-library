@@ -85,7 +85,7 @@ export function defineConfig(
           },
         ],
       },
-      plugins: getPlugins(config, settings),
+      plugins: getPlugins(config, settings).filter(Boolean),
       resolve: {
         modules: ['node_modules'],
         extensions: ['.ts', '.tsx', '.js', '.jsx', '.mjs', '.cjs'],

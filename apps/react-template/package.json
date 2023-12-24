@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "watch": "webpack -w",
+    "serve": "webpack serve"
   },
   "author": "",
   "license": "ISC",
