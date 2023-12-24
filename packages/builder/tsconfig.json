@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
-    "outDir": "./dist",
+    "declaration": true,
+    "outDir": "./dist/es",
     "baseUrl": ".",
     "rootDir": ".",
     "lib": ["ESNext", "ScriptHost"],

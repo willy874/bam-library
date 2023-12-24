@@ -1,5 +1,6 @@
 import { Configuration } from 'webpack';
 import webpackMerge from 'webpack-merge';
+import { DtsWebpackPlugin } from './src/application/plugins/dts';
 
 const rootPath = process.cwd();
 const path = require('path');
@@ -8,7 +9,7 @@ const base: Configuration = {
   mode: 'development',
   entry: path.join(rootPath, 'src', 'main.ts'),
   output: {
-    path: path.join(rootPath, 'dist'),
+    path: path.join(rootPath, 'dist', 'lib'),
     filename: 'index.js',
     clean: true,
   },
@@ -18,7 +19,7 @@ const base: Configuration = {
       '@': path.join(rootPath, 'src'),
     },
   },
-  plugins: [],
+  plugins: [new DtsWebpackPlugin()],
   module: {
     rules: [
       {
@@ -72,22 +73,26 @@ const base: Configuration = {
     /babel-preset-react-app\/(.)+/,
     'react/jsx-runtime',
     'loader-utils',
+    'rollup',
+    'rollup-plugin-dts',
+    '@rollup/plugin-alias',
   ],
   optimization: {
     usedExports: true,
   },
 };
 export default [
-  base,
   webpackMerge(base, {
     output: {
-      filename: 'index.esm.js',
+      path: path.join(rootPath, 'dist', 'es'),
+      filename: 'main.esm.js',
+      clean: true,
     },
     externalsType: 'module',
   }),
   webpackMerge(base, {
     output: {
-      filename: 'index.common.js',
+      filename: 'main.common.js',
     },
     externalsType: 'commonjs',
   }),

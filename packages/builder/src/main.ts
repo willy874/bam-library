@@ -4,4 +4,4 @@ export function build() {
   return webpack({});
 }
 
-export { defineConfig } from './application';
+export { defineConfig } from './application/defineConfig';
