@@ -11,21 +11,30 @@ interface DtsWebpackPluginOptions {
   output?: string;
 }
 
+function getEntryMapByCompiler(compiler: Compiler) {
+  const entry = compiler.options.entry;
+  const entryMap = typeof entry === 'function' ? entry() : entry;
+  return entryMap;
+}
+function getAliasMapByCompiler(config: Compiler) {
+  const alias = config.options.resolve.alias;
+  const aliasMap = Array.isArray(alias)
+    ? Object.fromEntries(alias.map(({ name, alias }) => [name, alias]))
+    : alias || {};
+  return aliasMap;
+}
+
 export class DtsWebpackPlugin implements WebpackPluginInstance {
   options: DtsWebpackPluginOptions = {};
   constructor(options: DtsWebpackPluginOptions = {}) {
     this.options = options;
   }
   async apply(compiler: Compiler) {
-    const entry = compiler.options.entry;
-    const entryMap = typeof entry === 'function' ? await entry() : entry;
+    const entryMap = getEntryMapByCompiler(compiler);
     const inputEntries = Object.entries(entryMap)
       .map(([, value]) => value.import || [])
       .flat();
-    const alias = compiler.options.resolve.alias;
-    const aliasMap = Array.isArray(alias)
-      ? Object.fromEntries(alias.map(({ name, alias }) => [name, alias]))
-      : alias || {};
+    const aliasMap = getAliasMapByCompiler(compiler);
     const aliasEntries = Object.entries(aliasMap)
       .map(([key, value]) => {
         if (Array.isArray(value)) {

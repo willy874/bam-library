@@ -1,5 +1,6 @@
 import { Configuration } from 'webpack';
 import webpackMerge from 'webpack-merge';
+import { NODEJS_EXTERNALS } from './src/constants';
 import { DtsWebpackPlugin } from './src/application/plugins/dts';
 
 const rootPath = process.cwd();
@@ -36,6 +37,7 @@ const base: Configuration = {
     outputModule: true,
   },
   externals: [
+    ...NODEJS_EXTERNALS,
     /^node:/,
     'dotenv',
     'yaml',

@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@bam-library/lodash": "workspace:*",
     "events": "^3.3.0",
     "lodash": "^4.17.21",
     "lodash-es": "^4.17.21"
