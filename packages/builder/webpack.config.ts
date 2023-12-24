@@ -42,7 +42,6 @@ const base: Configuration = {
     'dotenv',
     'yaml',
     'deepmerge',
-    'tsconfig-type',
     'eslint',
     'typescript',
     'webpack',
@@ -88,14 +87,20 @@ export default [
     output: {
       path: path.join(rootPath, 'dist', 'es'),
       filename: 'main.esm.js',
-      clean: true,
+      library: {
+        type: 'module',
+      },
     },
     externalsType: 'module',
   }),
   webpackMerge(base, {
     output: {
+      path: path.join(rootPath, 'dist', 'lib'),
       filename: 'main.common.js',
+      library: {
+        type: 'commonjs',
+      },
     },
-    externalsType: 'commonjs',
+    externalsType: 'commonjs-module',
   }),
 ];

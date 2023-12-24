@@ -2,8 +2,8 @@
   "name": "@bam-library/builder",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/lib/main.js",
-  "module": "dist/es/main.js",
+  "main": "dist/lib/main.common.js",
+  "module": "dist/es/main.esm.js",
   "typings": "dist/types/main.d.ts",
   "scripts": {
     "build": "webpack"

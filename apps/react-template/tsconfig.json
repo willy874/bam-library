@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "declaration": true,
-    "outDir": "./dist/es",
+    "outDir": "./dist",
     "baseUrl": ".",
     "rootDir": ".",
     "lib": ["ESNext", "ScriptHost"],
@@ -10,6 +10,6 @@
     }
   },
   "extends": "./node_modules/@bam-library/typescript-config/tsconfig.base.json",
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "types/*.d.ts"],
+  "include": ["src/**/*.ts", "src/**/*.d.ts"],
   "exclude": ["node_modules", "dist"]
 }

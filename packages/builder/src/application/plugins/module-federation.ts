@@ -13,6 +13,9 @@ export function getModuleFederationPlugin(options: ModuleFederationWebpackPlugin
         './web-components': defaultPath,
       }
     : {};
+  if (!appName) {
+    return undefined;
+  }
   return new webpack.container.ModuleFederationPlugin(
     deepmerge<ModuleFederationWebpackPluginOptions>(
       {

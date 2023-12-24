@@ -1,5 +1,5 @@
 import { deepmerge } from '@/libs/utils';
-import type { RuleSetRule } from '@/types/webpack';
+import type { RuleSetRule, SwcLoaderOptions } from '@/types/webpack';
 
 import type { DefaultSettings, JsLoaders } from '../types';
 
@@ -51,8 +51,20 @@ function getBabelLoader(_options: any, settings: DefaultSettings) {
   }
 }
 
+function isSwc(options: RuleSetRule): options is { type: 'swc'; options?: SwcLoaderOptions } {
+  return options.type === 'swc';
+}
+
 // eslint-disable-next-line @typescript-eslint/no-unused-vars, no-unused-vars
 function getSwcLoader(options: RuleSetRule, settings: DefaultSettings) {
+  if (!isSwc(options)) {
+    throw new Error('swc is not found');
+  }
+  try {
+    require('swc-loader');
+  } catch (error) {
+    throw new Error('swc-loader is not found');
+  }
   return [
     {
       test: /\.(([cm]js)|([tj]sx?))$/,
@@ -80,7 +92,7 @@ function getSwcLoader(options: RuleSetRule, settings: DefaultSettings) {
                 target: 'es2021',
               },
             },
-            options.options as any,
+            options.options || {},
           ),
         },
       ],
@@ -90,7 +102,7 @@ function getSwcLoader(options: RuleSetRule, settings: DefaultSettings) {
 
 export function getJsLoaders(options: JsLoaders | undefined, settings: DefaultSettings) {
   if (options === undefined) {
-    return getSwcLoader({}, settings);
+    return getSwcLoader({ type: 'swc' }, settings);
   }
   if (Array.isArray(options)) {
     return options;
