@@ -1,15 +1,17 @@
 {
   "compilerOptions": {
+    "jsx": "react-jsx",
     "declaration": true,
     "outDir": "./dist",
     "baseUrl": ".",
     "rootDir": ".",
-    "lib": ["ESNext", "ScriptHost"],
+    "lib": [ "ESNext", "ScriptHost", "DOM", "DOM.Iterable"],
+    "types": ["react", "react-dom", "node"],
     "paths": {
       "@/*": ["src/*"],
     }
   },
   "extends": "./node_modules/@bam-library/typescript-config/tsconfig.base.json",
-  "include": ["src/**/*.ts", "src/**/*.d.ts"],
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx"],
   "exclude": ["node_modules", "dist"]
 }

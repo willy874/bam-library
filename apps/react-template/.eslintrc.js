@@ -8,4 +8,7 @@ module.exports = {
     'plugin:@bam-library/typescript',
     'plugin:@bam-library/react',
   ],
+  env: {
+    browser: true,
+  },
 };

@@ -11,5 +11,8 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
+  },
+  rules: {
+    'no-dupe-class-members': 'off',
   }
 };
