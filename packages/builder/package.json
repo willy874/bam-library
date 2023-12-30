@@ -29,8 +29,8 @@
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
-    "@bam-library/lodash": "workspace:*",
     "@babel/core": "^7.23.6",
+    "@bam-library/lodash": "workspace:*",
     "@rollup/plugin-alias": "^5.1.0",
     "@svgr/webpack": "^8.1.0",
     "@swc/core": "^1.3.100",
@@ -54,11 +54,13 @@
     "postcss-loader": "^7.3.3",
     "postcss-normalize": "^10.0.1",
     "postcss-preset-env": "^9.3.0",
+    "postcss-rem": "^3.0.0",
     "rollup-plugin-dts": "^6.1.0",
     "sass": "^1.69.5",
     "sass-loader": "^13.3.2",
     "style-loader": "^3.3.3",
     "swc-loader": "^0.2.3",
+    "terser-webpack-plugin": "^5.3.10",
     "tsconfig-type": "^1.27.0",
     "webpack-chain": "^6.5.1",
     "webpack-dev-server": "^4.15.1",

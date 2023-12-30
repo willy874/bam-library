@@ -10,6 +10,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { getHashDigest, interpolateName } from 'loader-utils';
 import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
+import TerserWebpackPlugin from 'terser-webpack-plugin';
 import 'css-loader';
 import 'style-loader';
 import 'postcss';
@@ -39,4 +40,5 @@ export {
   HtmlWebpackPlugin,
   MiniCssExtractPlugin,
   CssMinimizerPlugin,
+  TerserWebpackPlugin,
 };

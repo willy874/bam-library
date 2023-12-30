@@ -10,7 +10,6 @@ import { getModuleFederationPlugin } from './module-federation';
 import { getForkTsCheckerWebpackPlugin } from './ts-check';
 
 import type { Config, DefaultSettings } from '../types';
-import { DtsWebpackPlugin } from './dts';
 
 export function getPlugins(config: Config, settings: DefaultSettings) {
   const {
@@ -76,7 +75,6 @@ export function getPlugins(config: Config, settings: DefaultSettings) {
         progress,
       ),
     ),
-    new DtsWebpackPlugin(),
     getCopyPlugin(copy),
     getForkTsCheckerWebpackPlugin(tsCheck, settings),
     getEslintPlugin(eslint, settings),

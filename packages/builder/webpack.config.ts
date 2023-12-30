@@ -1,7 +1,7 @@
 import { Configuration } from 'webpack';
 import webpackMerge from 'webpack-merge';
 import { NODEJS_EXTERNALS } from './src/constants';
-import { DtsWebpackPlugin } from './src/application/plugins/dts';
+import { DtsWebpackPlugin } from './src/libs/dts';
 
 const rootPath = process.cwd();
 const path = require('path');
@@ -55,16 +55,18 @@ const base: Configuration = {
     'html-webpack-plugin',
     'mini-css-extract-plugin',
     'css-minimizer-webpack-plugin',
+    'terser-webpack-plugin',
     'css-loader',
     'style-loader',
     'postcss',
     'postcss-loader',
-    'postcss-load-config',
     'sass',
     'sass-loader',
     '@svgr/webpack',
     '@swc/core',
     'swc-loader',
+    'postcss-load-config',
+    'postcss-rem',
     'postcss-flexbugs-fixes',
     'postcss-preset-env',
     'postcss-normalize',

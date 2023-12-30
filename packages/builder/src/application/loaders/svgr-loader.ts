@@ -1,10 +1,9 @@
 import { deepmerge } from '@/libs/utils';
-import type { SvgrLoaderOptions } from '@/types/svgr-loader';
 
 import type { DefaultSettings } from '../types';
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars, no-unused-vars
-export function getSvgrLoader(options: SvgrLoaderOptions, settings: DefaultSettings) {
+// eslint-disable-next-line no-unused-vars, @typescript-eslint/no-unused-vars
+export function getSvgrLoader(options: any, settings: DefaultSettings) {
   const svgrOption = deepmerge(
     {
       ref: true,

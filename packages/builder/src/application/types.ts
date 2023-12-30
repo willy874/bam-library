@@ -1,5 +1,4 @@
 import type { SassLoaderOptions } from '@/types/sass-loader';
-import type { SvgrLoaderOptions } from '@/types/svgr-loader';
 import type {
   EslintWebpackPluginOptions,
   ForkTsCheckerWebpackPluginOptions,
@@ -41,7 +40,7 @@ export interface Config {
   // Loaders
   icss?: WebpackCssLoaderOptions;
   localCss?: WebpackCssLoaderOptions;
-  svgr?: SvgrLoaderOptions;
+  svgr?: object;
   js?: JsLoaders;
   // Plugins
   define?: DefinePluginOptions;

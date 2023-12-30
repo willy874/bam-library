@@ -6,11 +6,6 @@ import type { DefaultSettings, JsLoaders } from '../types';
 function getBabelLoader(_options: any, settings: DefaultSettings) {
   const { isDev, isProd } = settings;
   try {
-    require('babel-loader');
-  } catch (error) {
-    throw new Error('react, babel-loader is not found');
-  }
-  try {
     return [
       {
         test: /\.(js|mjs|jsx|ts|tsx)$/,

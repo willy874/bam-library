@@ -12,7 +12,9 @@ import { getPlugins } from './plugins';
 import { getDevServe } from './server';
 
 import type { Config, DefaultSettings } from './types';
-import { CssMinimizerPlugin } from '@/libs/webpack';
+import { CssMinimizerPlugin, TerserWebpackPlugin } from '@/libs/webpack';
+
+import { getCatch } from './catch';
 
 function getDefaultSettings(
   env: Partial<Record<string, string>>,
@@ -46,7 +48,7 @@ export function defineConfig(
     const config = typeof params === 'function' ? await params(env, argv) : params || {};
     const { webpackConfiguration = {}, webpackChain = () => {}, logs } = config;
     const settings = getDefaultSettings(env, argv);
-    const { mode, isDev } = settings;
+    const { mode, isDev, isProd } = settings;
     const baseWebpackConfiguration: WebpackConfig = {
       entry: {
         app: path.resolveRoot('src', 'main.ts'),
@@ -60,12 +62,11 @@ export function defineConfig(
         path: path.resolveRoot('dist'),
         filename: 'js/entry.[name].[chunkhash:8].js',
         chunkFilename: 'js/chunk.[name].[contenthash:8].js',
-        assetModuleFilename(pathData) {
-          const info = pathData.filename!.split('.');
-          let extType = info[info.length - 1];
+        assetModuleFilename({ filename = '' }) {
+          let extType = filename.replace(/(.)*\./, '');
           if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType)) {
             extType = 'media';
-          } else if (/woff|woff2/.test(extType)) {
+          } else if (/woff2?/.test(extType)) {
             extType = 'css';
           }
           return `static/${extType}/[name]-[hash][ext]`;
@@ -97,8 +98,31 @@ export function defineConfig(
       performance: {
         hints: false,
       },
+      cache: getCatch(settings, env),
       optimization: {
-        minimizer: [`...`, new CssMinimizerPlugin()],
+        minimize: isProd,
+        minimizer: [
+          new CssMinimizerPlugin(),
+          new TerserWebpackPlugin({
+            terserOptions: {
+              compress: {
+                ecma: 5,
+                comparisons: false,
+                inline: 2,
+              },
+              mangle: {
+                safari10: true,
+              },
+              keep_classnames: isProd,
+              keep_fnames: isProd,
+              output: {
+                ecma: 5,
+                comments: false,
+                ascii_only: true,
+              },
+            },
+          }),
+        ],
         splitChunks: {
           minSize: 40000,
           maxSize: 240000,

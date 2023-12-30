@@ -5,7 +5,7 @@ import { CWD, ConsoleColors } from '@/constants';
 import { dotenv, yaml } from '@/libs/utils';
 import type { PackageJson, Tsconfig } from '@/types/config';
 
-import { resolveRoot } from '@/utils/path/extents';
+import { resolveRoot } from '@/utils/node/path/extents';
 
 export function isFile(src: string) {
   return fs.existsSync(src) && fs.statSync(src).isFile();

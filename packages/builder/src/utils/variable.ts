@@ -1,8 +1,6 @@
-import * as fs from './fs';
+import { fs, path } from './node';
 import { ARGS, CWD } from '@/constants';
 import { dotenv } from '@/libs/utils';
-
-import { resolveRoot } from './path/extents';
 
 export function getArgv() {
   const ARGUMENT_SEPARATION_REGEX = /([^=\s]+)=?\s*(.*)/;
@@ -26,7 +24,7 @@ export function getArgv() {
 export async function getEnvironment(match = '') {
   const fileList = await fs.promises.readdir(CWD);
   const envs = fileList.filter((p) => new RegExp(`^\\.env(\\.)?${match}$`).test(p));
-  const src = resolveRoot(envs.find((p) => p) || '');
+  const src = path.resolveRoot(envs.find((p) => p) || '');
   if (src) {
     return Object.assign(
       process.env,
