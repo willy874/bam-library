@@ -4,4 +4,5 @@ export function build() {
   return webpack({});
 }
 
-export { defineConfig } from './application/defineConfig';
+export { componentBuilder } from './component/defineConfig';
+export { applicationBuilder } from './application/defineConfig';

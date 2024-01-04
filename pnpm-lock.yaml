@@ -34,6 +34,9 @@ importers:
 
   apps/react-template:
     dependencies:
+      events:
+        specifier: ^3.3.0
+        version: 3.3.0
       react:
         specifier: ^18.2.0
         version: 18.2.0

@@ -2,7 +2,7 @@ import WebpackChain from 'webpack-chain';
 import webpackMerge from 'webpack-merge';
 
 import type { WebpackConfig } from '@/types/webpack';
-import { getArgv, getEnvironment, path } from '@/utils';
+import { ArgvType, EnvType, MaybePromise, getArgv, getEnvironment, path } from '@/utils';
 
 import { getAssetLoaders } from './loaders/assets-loader';
 import { getIcssLoader, getLocalCssLoader } from './loaders/css-loader';
@@ -34,13 +34,8 @@ function getDefaultSettings(
     argv,
   };
 }
-export function defineConfig(
-  params?:
-    | Config
-    | ((
-        env: Partial<Record<string, string>>,
-        argv: Record<string, string | number | boolean>,
-      ) => Config | Promise<Config>),
+export function applicationBuilder(
+  params?: Config | ((env: EnvType, argv: ArgvType) => MaybePromise<Config>),
 ): () => Promise<WebpackConfig> {
   return async () => {
     const env = await getEnvironment();

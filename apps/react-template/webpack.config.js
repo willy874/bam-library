@@ -1,3 +1,3 @@
-const { defineConfig } = require('@bam-library/builder');
+const { applicationBuilder } = require('@bam-library/builder');
 
-module.exports = defineConfig();
+module.exports = applicationBuilder();

@@ -1,4 +1,4 @@
-import type { EventEmitter } from './event';
+import type { EventEmitter } from 'events';
 import type { AnyFunction, RecordKeyType } from './utils';
 
 export type ToHandler<

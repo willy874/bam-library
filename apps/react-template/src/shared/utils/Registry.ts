@@ -1,6 +1,6 @@
 import * as Core from '../core';
 import { Binder } from './Binder';
-import { EventEmitter } from './EventEmitter';
+import { EventEmitter } from 'events';
 import { isRecordKeyType } from './is';
 
 export class Registry<B extends Record<Core.RecordKeyType, unknown>> extends EventEmitter implements Core.Registry<B> {

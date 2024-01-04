@@ -2,6 +2,12 @@ import { fs, path } from './node';
 import { ARGS, CWD } from '@/constants';
 import { dotenv } from '@/libs/utils';
 
+export type MaybePromise<T> = T | Promise<T>;
+
+export type ArgvType = Record<string, string | number | boolean>;
+
+export type EnvType = Partial<Record<string, string>>;
+
 export function getArgv() {
   const ARGUMENT_SEPARATION_REGEX = /([^=\s]+)=?\s*(.*)/;
   const argv = ARGS;
