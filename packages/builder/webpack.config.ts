@@ -79,6 +79,21 @@ const base: Configuration = {
     'rollup',
     'rollup-plugin-dts',
     '@rollup/plugin-alias',
+    '@rollup/plugin-commonjs',
+    '@rollup/plugin-json',
+    '@rollup/plugin-node-resolve',
+    'rollup-plugin-esbuild',
+    'rollup-plugin-postcss',
+    'rollup-plugin-terser',
+    'rollup-plugin-visualizer',
+    'rollup-plugin-serve',
+    'rollup-plugin-livereload',
+    'rollup-plugin-styles',
+    'rollup-plugin-copy',
+    'rollup-plugin-external-globals',
+    'rollup-plugin-peer-deps-external',
+    'rollup-plugin-swc',
+    'rollup-plugin-scss',
   ],
   optimization: {
     usedExports: true,
@@ -87,21 +102,14 @@ const base: Configuration = {
 export default [
   webpackMerge(base, {
     output: {
-      path: path.join(rootPath, 'dist', 'es'),
-      filename: 'main.esm.js',
-      library: {
-        type: 'module',
-      },
-    },
-    externalsType: 'module',
-  }),
-  webpackMerge(base, {
-    output: {
       path: path.join(rootPath, 'dist', 'lib'),
       filename: 'main.common.js',
+      globalObject: 'this',
+      libraryTarget: 'commonjs',
       library: {
         type: 'commonjs',
       },
+      clean: true,
     },
     externalsType: 'commonjs-module',
   }),

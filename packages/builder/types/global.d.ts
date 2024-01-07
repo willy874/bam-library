@@ -1,2 +1,2 @@
-declare type ITsconfig = import('type-fest').PackageJson;
-declare type IPackageJson = import('tsconfig-type').Tsconfig;
+declare type ITsconfig = import('tsconfig-type').Tsconfig;
+declare type IPackageJson = import('type-fest').PackageJson;

@@ -6,3 +6,5 @@ export function build() {
 
 export { componentBuilder } from './component/defineConfig';
 export { applicationBuilder } from './application/defineConfig';
+
+export default function builder() {}

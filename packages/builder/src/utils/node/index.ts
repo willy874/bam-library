@@ -1,3 +1,5 @@
+import crypto from 'node:crypto';
+
 export * as path from './path';
 export * as fs from './fs';
-export * as crypto from './crypto';
+export { crypto };
