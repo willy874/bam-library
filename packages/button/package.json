@@ -1,7 +1,10 @@
 {
-  "name": "button",
+  "name": "@bam-library/button",
   "version": "1.0.0",
   "description": "",
+  "main": "dist/lib/main.js",
+  "module": "dist/es/main.js",
+  "types": "dist/types/main.d.ts",
   "scripts": {
     "build": "rollup -c",
     "watch": "rollup -c --watch"
