@@ -46,7 +46,7 @@ importers:
     devDependencies:
       '@bam-library/builder':
         specifier: workspace:*
-        version: link:../../modules/builder
+        version: link:../../packages/builder
       '@bam-library/eslint-config':
         specifier: workspace:*
         version: link:../../modules/eslint-config
@@ -134,166 +134,6 @@ importers:
       vite:
         specifier: ^5.0.8
         version: 5.0.11(@types/node@20.10.0)
-
-  modules/builder:
-    dependencies:
-      '@babel/core':
-        specifier: ^7.23.6
-        version: 7.23.6
-      '@bam-library/lodash':
-        specifier: workspace:*
-        version: link:../lodash
-      '@rollup/plugin-alias':
-        specifier: ^5.1.0
-        version: 5.1.0(rollup@4.9.1)
-      '@rollup/plugin-commonjs':
-        specifier: ^25.0.7
-        version: 25.0.7(rollup@4.9.1)
-      '@rollup/plugin-json':
-        specifier: ^6.1.0
-        version: 6.1.0(rollup@4.9.1)
-      '@rollup/plugin-node-resolve':
-        specifier: ^15.2.3
-        version: 15.2.3(rollup@4.9.1)
-      '@svgr/webpack':
-        specifier: ^8.1.0
-        version: 8.1.0(typescript@5.2.2)
-      '@swc/core':
-        specifier: ^1.3.100
-        version: 1.3.100
-      '@swc/register':
-        specifier: ^0.1.10
-        version: 0.1.10(@swc/core@1.3.100)
-      babel-loader:
-        specifier: ^9.1.3
-        version: 9.1.3(@babel/core@7.23.6)(webpack@5.89.0)
-      babel-preset-react-app:
-        specifier: ^10.0.1
-        version: 10.0.1
-      copy-webpack-plugin:
-        specifier: ^11.0.0
-        version: 11.0.0(webpack@5.89.0)
-      crypto:
-        specifier: ^1.0.1
-        version: 1.0.1
-      css-loader:
-        specifier: ^6.8.1
-        version: 6.8.1(webpack@5.89.0)
-      css-minimizer-webpack-plugin:
-        specifier: ^5.0.1
-        version: 5.0.1(esbuild@0.19.11)(webpack@5.89.0)
-      deepmerge:
-        specifier: ^4.3.1
-        version: 4.3.1
-      dotenv:
-        specifier: ^16.3.1
-        version: 16.3.1
-      eslint-webpack-plugin:
-        specifier: ^4.0.1
-        version: 4.0.1(eslint@8.56.0)(webpack@5.89.0)
-      fork-ts-checker-webpack-plugin:
-        specifier: ^9.0.2
-        version: 9.0.2(typescript@5.2.2)(webpack@5.89.0)
-      html-webpack-plugin:
-        specifier: ^5.5.4
-        version: 5.5.4(webpack@5.89.0)
-      loader-utils:
-        specifier: ^3.2.1
-        version: 3.2.1
-      mini-css-extract-plugin:
-        specifier: ^2.7.6
-        version: 2.7.6(webpack@5.89.0)
-      npm-dts-webpack-plugin:
-        specifier: ^1.3.12
-        version: 1.3.12
-      postcss:
-        specifier: ^8.4.32
-        version: 8.4.32
-      postcss-flexbugs-fixes:
-        specifier: ^5.0.2
-        version: 5.0.2(postcss@8.4.32)
-      postcss-load-config:
-        specifier: ^5.0.2
-        version: 5.0.2(postcss@8.4.32)
-      postcss-loader:
-        specifier: ^7.3.3
-        version: 7.3.3(postcss@8.4.32)(typescript@5.2.2)(webpack@5.89.0)
-      postcss-normalize:
-        specifier: ^10.0.1
-        version: 10.0.1(browserslist@4.22.2)(postcss@8.4.32)
-      postcss-preset-env:
-        specifier: ^9.3.0
-        version: 9.3.0(postcss@8.4.32)
-      postcss-rem:
-        specifier: ^3.0.0
-        version: 3.0.0
-      rollup-plugin-dts:
-        specifier: ^6.1.0
-        version: 6.1.0(rollup@4.9.1)(typescript@5.2.2)
-      rollup-plugin-esbuild:
-        specifier: ^6.1.0
-        version: 6.1.0(esbuild@0.19.11)(rollup@4.9.1)
-      sass:
-        specifier: ^1.69.5
-        version: 1.69.5
-      sass-loader:
-        specifier: ^13.3.2
-        version: 13.3.2(sass@1.69.5)(webpack@5.89.0)
-      style-loader:
-        specifier: ^3.3.3
-        version: 3.3.3(webpack@5.89.0)
-      swc-loader:
-        specifier: ^0.2.3
-        version: 0.2.3(@swc/core@1.3.100)(webpack@5.89.0)
-      terser-webpack-plugin:
-        specifier: ^5.3.10
-        version: 5.3.10(@swc/core@1.3.100)(esbuild@0.19.11)(webpack@5.89.0)
-      tsconfig-type:
-        specifier: ^1.27.0
-        version: 1.27.0
-      webpack-chain:
-        specifier: ^6.5.1
-        version: 6.5.1
-      webpack-dev-server:
-        specifier: ^4.15.1
-        version: 4.15.1(webpack-cli@5.1.4)(webpack@5.89.0)
-      webpack-merge:
-        specifier: ^5.10.0
-        version: 5.10.0
-      yaml:
-        specifier: ^2.3.4
-        version: 2.3.4
-    devDependencies:
-      '@bam-library/eslint-config':
-        specifier: workspace:*
-        version: link:../eslint-config
-      '@bam-library/eslint-plugin':
-        specifier: workspace:*
-        version: link:../eslint-plugin
-      '@bam-library/typescript-config':
-        specifier: workspace:*
-        version: link:../typescript-config
-      '@types/loader-utils':
-        specifier: ^2.0.6
-        version: 2.0.6
-      '@types/node':
-        specifier: ^20.10.0
-        version: 20.10.0
-      eslint:
-        specifier: ^8.52.0
-        version: 8.56.0
-      rollup:
-        specifier: ^4.9.1
-        version: 4.9.1
-      typescript:
-        specifier: ^5.2.2
-        version: 5.2.2
-      webpack:
-        specifier: ^5.89.0
-        version: 5.89.0(@swc/core@1.3.100)(esbuild@0.19.11)(webpack-cli@5.1.4)
-      webpack-cli:
-        specifier: ^5.1.4
-        version: 5.1.4(webpack-dev-server@4.15.1)(webpack@5.89.0)
 
   modules/eslint-config:
     dependencies:
@@ -430,6 +270,166 @@ importers:
         specifier: ^5.2.2
         version: 5.2.2
 
+  packages/builder:
+    dependencies:
+      '@babel/core':
+        specifier: ^7.23.6
+        version: 7.23.6
+      '@bam-library/lodash':
+        specifier: workspace:*
+        version: link:../../modules/lodash
+      '@rollup/plugin-alias':
+        specifier: ^5.1.0
+        version: 5.1.0(rollup@4.9.1)
+      '@rollup/plugin-commonjs':
+        specifier: ^25.0.7
+        version: 25.0.7(rollup@4.9.1)
+      '@rollup/plugin-json':
+        specifier: ^6.1.0
+        version: 6.1.0(rollup@4.9.1)
+      '@rollup/plugin-node-resolve':
+        specifier: ^15.2.3
+        version: 15.2.3(rollup@4.9.1)
+      '@svgr/webpack':
+        specifier: ^8.1.0
+        version: 8.1.0(typescript@5.2.2)
+      '@swc/core':
+        specifier: ^1.3.100
+        version: 1.3.100
+      '@swc/register':
+        specifier: ^0.1.10
+        version: 0.1.10(@swc/core@1.3.100)
+      babel-loader:
+        specifier: ^9.1.3
+        version: 9.1.3(@babel/core@7.23.6)(webpack@5.89.0)
+      babel-preset-react-app:
+        specifier: ^10.0.1
+        version: 10.0.1
+      copy-webpack-plugin:
+        specifier: ^11.0.0
+        version: 11.0.0(webpack@5.89.0)
+      crypto:
+        specifier: ^1.0.1
+        version: 1.0.1
+      css-loader:
+        specifier: ^6.8.1
+        version: 6.8.1(webpack@5.89.0)
+      css-minimizer-webpack-plugin:
+        specifier: ^5.0.1
+        version: 5.0.1(esbuild@0.19.11)(webpack@5.89.0)
+      deepmerge:
+        specifier: ^4.3.1
+        version: 4.3.1
+      dotenv:
+        specifier: ^16.3.1
+        version: 16.3.1
+      eslint-webpack-plugin:
+        specifier: ^4.0.1
+        version: 4.0.1(eslint@8.56.0)(webpack@5.89.0)
+      fork-ts-checker-webpack-plugin:
+        specifier: ^9.0.2
+        version: 9.0.2(typescript@5.2.2)(webpack@5.89.0)
+      html-webpack-plugin:
+        specifier: ^5.5.4
+        version: 5.5.4(webpack@5.89.0)
+      loader-utils:
+        specifier: ^3.2.1
+        version: 3.2.1
+      mini-css-extract-plugin:
+        specifier: ^2.7.6
+        version: 2.7.6(webpack@5.89.0)
+      npm-dts-webpack-plugin:
+        specifier: ^1.3.12
+        version: 1.3.12
+      postcss:
+        specifier: ^8.4.32
+        version: 8.4.32
+      postcss-flexbugs-fixes:
+        specifier: ^5.0.2
+        version: 5.0.2(postcss@8.4.32)
+      postcss-load-config:
+        specifier: ^5.0.2
+        version: 5.0.2(postcss@8.4.32)
+      postcss-loader:
+        specifier: ^7.3.3
+        version: 7.3.3(postcss@8.4.32)(typescript@5.2.2)(webpack@5.89.0)
+      postcss-normalize:
+        specifier: ^10.0.1
+        version: 10.0.1(browserslist@4.22.2)(postcss@8.4.32)
+      postcss-preset-env:
+        specifier: ^9.3.0
+        version: 9.3.0(postcss@8.4.32)
+      postcss-rem:
+        specifier: ^3.0.0
+        version: 3.0.0
+      rollup-plugin-dts:
+        specifier: ^6.1.0
+        version: 6.1.0(rollup@4.9.1)(typescript@5.2.2)
+      rollup-plugin-esbuild:
+        specifier: ^6.1.0
+        version: 6.1.0(esbuild@0.19.11)(rollup@4.9.1)
+      sass:
+        specifier: ^1.69.5
+        version: 1.69.5
+      sass-loader:
+        specifier: ^13.3.2
+        version: 13.3.2(sass@1.69.5)(webpack@5.89.0)
+      style-loader:
+        specifier: ^3.3.3
+        version: 3.3.3(webpack@5.89.0)
+      swc-loader:
+        specifier: ^0.2.3
+        version: 0.2.3(@swc/core@1.3.100)(webpack@5.89.0)
+      terser-webpack-plugin:
+        specifier: ^5.3.10
+        version: 5.3.10(@swc/core@1.3.100)(esbuild@0.19.11)(webpack@5.89.0)
+      tsconfig-type:
+        specifier: ^1.27.0
+        version: 1.27.0
+      webpack-chain:
+        specifier: ^6.5.1
+        version: 6.5.1
+      webpack-dev-server:
+        specifier: ^4.15.1
+        version: 4.15.1(webpack-cli@5.1.4)(webpack@5.89.0)
+      webpack-merge:
+        specifier: ^5.10.0
+        version: 5.10.0
+      yaml:
+        specifier: ^2.3.4
+        version: 2.3.4
+    devDependencies:
+      '@bam-library/eslint-config':
+        specifier: workspace:*
+        version: link:../../modules/eslint-config
+      '@bam-library/eslint-plugin':
+        specifier: workspace:*
+        version: link:../../modules/eslint-plugin
+      '@bam-library/typescript-config':
+        specifier: workspace:*
+        version: link:../../modules/typescript-config
+      '@types/loader-utils':
+        specifier: ^2.0.6
+        version: 2.0.6
+      '@types/node':
+        specifier: ^20.10.0
+        version: 20.10.0
+      eslint:
+        specifier: ^8.52.0
+        version: 8.56.0
+      rollup:
+        specifier: ^4.9.1
+        version: 4.9.1
+      typescript:
+        specifier: ^5.2.2
+        version: 5.2.2
+      webpack:
+        specifier: ^5.89.0
+        version: 5.89.0(@swc/core@1.3.100)(esbuild@0.19.11)(webpack-cli@5.1.4)
+      webpack-cli:
+        specifier: ^5.1.4
+        version: 5.1.4(webpack-dev-server@4.15.1)(webpack@5.89.0)
+
   packages/button:
     dependencies:
       react:
@@ -441,7 +441,7 @@ importers:
     devDependencies:
       '@bam-library/builder':
         specifier: workspace:*
-        version: link:../../modules/builder
+        version: link:../builder
       '@bam-library/eslint-config':
         specifier: workspace:*
         version: link:../../modules/eslint-config
@@ -629,8 +629,8 @@ packages:
     resolution: {integrity: sha512-y6EEzULok0Qvz8yyLkCvVX+02ic+By2UdOhylwUOvOn9dvYc9mKICJuuU1n1XBI02YWsNsnrY1kc6DVbjcXbtw==}
     engines: {node: '>=6.9.0'}
     dependencies:
-      '@babel/compat-data': 7.23.2
-      '@babel/helper-validator-option': 7.22.15
+      '@babel/compat-data': 7.23.5
+      '@babel/helper-validator-option': 7.23.5
       browserslist: 4.22.2
       lru-cache: 5.1.1
       semver: 6.3.1
@@ -713,7 +713,7 @@ packages:
       '@babel/core': ^7.4.0 || ^8.0.0-0 <8.0.0
     dependencies:
       '@babel/core': 7.23.2
-      '@babel/helper-compilation-targets': 7.22.15
+      '@babel/helper-compilation-targets': 7.23.6
       '@babel/helper-plugin-utils': 7.22.5
       debug: 4.3.4
       lodash.debounce: 4.0.8
@@ -907,11 +907,6 @@ packages:
   /@babel/helper-validator-identifier@7.22.20:
     resolution: {integrity: sha512-Y4OZ+ytlatR8AI+8KZfKuL5urKp7qey08ha31L8b3BwewJAoJamTzyvxPR/5D+KkdJCGPq/+8TukHBlY10FX9A==}
     engines: {node: '>=6.9.0'}
-
-  /@babel/helper-validator-option@7.22.15:
-    resolution: {integrity: sha512-bMn7RmyFjY/mdECUbgn9eoSY4vqvacUnS9i9vGAGttgFWesO6B4CYWA7XlpbWgBt71iv/hfbPlynohStqnu5hA==}
-    engines: {node: '>=6.9.0'}
-    dev: false
 
   /@babel/helper-validator-option@7.23.5:
     resolution: {integrity: sha512-85ttAOMLsr53VgXkTbkx8oA6YTfT4q7/HzXSLEYmjcSTJPMPQtvq1BD79Byep5xMUYbGRzEpDsjUf3dyp54IKw==}
@@ -5863,7 +5858,7 @@ packages:
     peerDependencies:
       '@babel/core': ^7.4.0 || ^8.0.0-0 <8.0.0
     dependencies:
-      '@babel/compat-data': 7.23.2
+      '@babel/compat-data': 7.23.5
       '@babel/core': 7.23.2
       '@babel/helper-define-polyfill-provider': 0.4.3(@babel/core@7.23.2)
       semver: 6.3.1
