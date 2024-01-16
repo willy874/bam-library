@@ -59,6 +59,8 @@ export function getPlugins(config: Config, settings: DefaultSettings) {
     ),
     new DefinePlugin({
       process: JSON.stringify({ env: exposeEnv }),
+      $RefreshReg$: '(() => {})',
+      $RefreshSig$: '(() => () => {})',
       ...define,
     }),
     new ProgressPlugin(

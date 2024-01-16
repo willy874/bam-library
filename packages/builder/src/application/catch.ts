@@ -1,6 +1,7 @@
 import { DefaultSettings } from './types';
 import { path, fs, crypto } from '@/utils';
 import type { WebpackConfig } from '@/types/webpack';
+import { CWD } from '@/constants';
 
 export function getCatch(_settings: DefaultSettings, env: Partial<Record<string, string>>): WebpackConfig['cache'] {
   const hash = crypto.createHash('md5');
@@ -13,7 +14,7 @@ export function getCatch(_settings: DefaultSettings, env: Partial<Record<string,
     store: 'pack',
     buildDependencies: {
       defaultWebpack: ['webpack/lib/'],
-      config: [__filename],
+      config: [CWD],
       tsconfig: [path.resolveRoot('tsconfig.json')].filter(fs.isFile),
     },
   };

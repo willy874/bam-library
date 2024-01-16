@@ -6,6 +6,6 @@
   "main": "index.js",
   "dependencies": {
     "@bam-library/eslint-config": "workspace:*",
-    "prettier": "^3.0.3"
+    "prettier": "^2.8.8"
   }
 }
