@@ -2,7 +2,7 @@
  * @type {import('eslint').ESLint.Options}
  */
 module.exports = {
-  extends: ['@bam-library', 'plugin:@bam-library/prettier', 'plugin:@bam-library/typescript'],
+  extends: ['@bam', 'plugin:@bam/prettier', 'plugin:@bam/typescript'],
   overrides: [
     {
       files: ['packages/base/**/*.ts'],

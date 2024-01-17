@@ -2,12 +2,7 @@
  * @type {import('eslint').ESLint.Options}
  */
 module.exports = {
-  extends: [
-    '@bam-library',
-    'plugin:@bam-library/prettier',
-    'plugin:@bam-library/typescript',
-    'plugin:@bam-library/react',
-  ],
+  extends: ['@bam', 'plugin:@bam/prettier', 'plugin:@bam/typescript', 'plugin:@bam/react'],
   env: {
     browser: true,
   },

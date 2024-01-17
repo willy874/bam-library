@@ -1,5 +1,5 @@
-import './App.css'
-import {Button} from "@bam-library/button";
+import "./App.css";
+import { Button } from "@bam/button";
 
 function App() {
   return (
@@ -7,10 +7,10 @@ function App() {
       <h1>bam-library</h1>
       <div className="card">
         <Button />
-        <p>@bam-library/button</p>
+        <p>@bam/button</p>
       </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

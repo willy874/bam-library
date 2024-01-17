@@ -1,5 +1,5 @@
 {
-  "name": "@bam-library/lodash",
+  "name": "@bam/lodash",
   "version": "0.0.1",
   "main": "index.common.js",
   "module": "index.esm.js",

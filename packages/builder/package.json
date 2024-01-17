@@ -1,5 +1,5 @@
 {
-  "name": "@bam-library/builder",
+  "name": "@bam/builder",
   "version": "1.0.0",
   "description": "",
   "main": "dist/lib/main.common.js",
@@ -17,9 +17,9 @@
     "webpack": "^5.0.0"
   },
   "devDependencies": {
-    "@bam-library/eslint-config": "workspace:*",
-    "@bam-library/eslint-plugin": "workspace:*",
-    "@bam-library/typescript-config": "workspace:*",
+    "@bam/eslint-config": "workspace:*",
+    "@bam/eslint-plugin": "workspace:*",
+    "@bam/typescript-config": "workspace:*",
     "@types/loader-utils": "^2.0.6",
     "@types/node": "^20.10.0",
     "eslint": "^8.52.0",
@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "@babel/core": "^7.23.6",
-    "@bam-library/lodash": "workspace:*",
+    "@bam/lodash": "workspace:*",
     "@rollup/plugin-alias": "^5.1.0",
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-json": "^6.1.0",

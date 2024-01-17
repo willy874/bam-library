@@ -1,5 +1,5 @@
 {
-  "name": "@bam-library/utils",
+  "name": "@bam/utils",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,15 +9,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@bam-library/lodash": "workspace:*",
+    "@bam/lodash": "workspace:*",
     "events": "^3.3.0",
     "lodash": "^4.17.21",
     "lodash-es": "^4.17.21"
   },
   "devDependencies": {
-    "@bam-library/eslint-config": "workspace:*",
-    "@bam-library/eslint-plugin": "workspace:*",
-    "@bam-library/typescript-config": "workspace:*",
+    "@bam/eslint-config": "workspace:*",
+    "@bam/eslint-plugin": "workspace:*",
+    "@bam/typescript-config": "workspace:*",
     "@types/lodash": "^4.14.200",
     "@types/node": "^20.10.0",
     "eslint": "^8.52.0",
