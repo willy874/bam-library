@@ -1,11 +1,11 @@
 {
-  "name": "@bam-library/prettier-config",
+  "name": "@bam/prettier-config",
   "private": true,
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "@bam-library/eslint-config": "workspace:*",
+    "@bam/eslint-config": "workspace:*",
     "prettier": "^2.8.8"
   }
 }

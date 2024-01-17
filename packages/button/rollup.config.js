@@ -1,4 +1,4 @@
-const { componentBuilder } = require('@bam-library/builder');
+const { componentBuilder } = require('@bam/builder');
 const { dts } = require('rollup-plugin-dts');
 
 module.exports = componentBuilder({

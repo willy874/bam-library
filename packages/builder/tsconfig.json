@@ -6,10 +6,10 @@
     "rootDir": ".",
     "lib": ["ESNext", "ScriptHost"],
     "paths": {
-      "@/*": ["src/*"],
+      "@/*": ["src/*"]
     }
   },
-  "extends": "./node_modules/@bam-library/typescript-config/tsconfig.base.json",
+  "extends": "./node_modules/@bam/typescript-config/tsconfig.base.json",
   "include": ["src/**/*.ts", "src/**/*.d.ts", "types/*.d.ts"],
   "exclude": ["node_modules", "dist"]
 }

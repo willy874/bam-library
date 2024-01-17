@@ -1,3 +1,3 @@
-const { applicationBuilder } = require('@bam-library/builder');
+const { applicationBuilder } = require('@bam/builder');
 
 module.exports = applicationBuilder();

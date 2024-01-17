@@ -1,12 +1,12 @@
 {
-  "name": "@bam-library/eslint-plugin",
+  "name": "@bam/eslint-plugin",
   "private": true,
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "@bam-library/eslint-config": "workspace:*",
-    "@bam-library/prettier-config": "workspace:*",
+    "@bam/eslint-config": "workspace:*",
+    "@bam/prettier-config": "workspace:*",
     "@typescript-eslint/eslint-plugin": "^6.8.0",
     "@typescript-eslint/parser": "^6.8.0",
     "eslint": "^8.52.0",

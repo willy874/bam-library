@@ -1,5 +1,5 @@
 {
-  "name": "@bam-library/babel-preset-react-app",
+  "name": "@bam/babel-preset-react-app",
   "version": "0.0.1",
   "description": "Babel preset used by Create React App",
   "dependencies": {

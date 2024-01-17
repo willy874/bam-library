@@ -1,6 +1,6 @@
 /**
- * @type {import('@bam-library/eslint-config').ESLintConfigExport}
+ * @type {import('@bam/eslint-config').ESLintConfigExport}
  */
 module.exports = {
-  extends: ['@bam-library', require.resolve('./prettier')],
+  extends: ['@bam', require.resolve('./prettier')],
 };
