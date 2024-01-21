@@ -90,7 +90,23 @@ importers:
         specifier: ^5.1.4
         version: 5.1.4(webpack@5.89.0)
 
-  apps/ui-preview: {}
+  apps/ui-preview:
+    devDependencies:
+      '@bam/builder':
+        specifier: workspace:*
+        version: link:../../packages/builder
+      '@bam/eslint-config':
+        specifier: workspace:*
+        version: link:../../modules/eslint-config
+      '@bam/eslint-plugin':
+        specifier: workspace:*
+        version: link:../../modules/eslint-plugin
+      '@bam/prettier-config':
+        specifier: workspace:*
+        version: link:../../modules/prettier-config
+      '@bam/typescript-config':
+        specifier: workspace:*
+        version: link:../../modules/typescript-config
 
   apps/vite-preview:
     dependencies:

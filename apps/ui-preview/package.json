@@ -8,5 +8,11 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {}
+  "devDependencies": {
+    "@bam/builder": "workspace:*",
+    "@bam/eslint-config": "workspace:*",
+    "@bam/eslint-plugin": "workspace:*",
+    "@bam/prettier-config": "workspace:*",
+    "@bam/typescript-config": "workspace:*"
+  }
 }

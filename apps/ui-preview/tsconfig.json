@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "declaration": true,
+    "outDir": "./dist",
+    "baseUrl": ".",
+    "rootDir": ".",
+    "lib": ["ESNext", "ScriptHost", "DOM", "DOM.Iterable"],
+    "types": ["react", "react-dom", "node"],
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  "extends": "@bam/typescript-config",
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "src/**/*.stories.tsx",
+    "src/**/*.stories.vue"
+  ],
+  "exclude": ["node_modules", "dist"]
+}
