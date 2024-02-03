@@ -2,8 +2,9 @@
   "name": "bam-library",
   "version": "1.0.0",
   "scripts": {
-    "test": "sh ./scripts/test.sh",
-    "reinstall": "sh ./scripts/reinstall.sh"
+    "build": "sh ./scripts/build.sh",
+    "reinstall": "sh ./scripts/reinstall.sh",
+    "setup": "sh ./scripts/setup.sh"
   },
   "author": "",
   "license": "ISC",
