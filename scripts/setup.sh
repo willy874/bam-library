@@ -1,6 +1,6 @@
 RED='\033[0;31m'
 GREEN='\033[0;32m'
-YALLOW='\033[0;33m'
+YELLOW='\033[0;33m'
 BLUE='\033[0;34m'
 NC='\033[0m'
 PWD=$(pwd)
@@ -9,10 +9,7 @@ TARGET_NODE_VERSION="20.11.0"
 TARGET_PNPM_VERSION="8.15.1"
 
 function create_nvm() {
-  if [ -s "$HOME/.nvm/nvm.sh" ];
-  then
-    echo -e "${GREEN}Confirm whether nvm bin already exists.${NC}"
-  else
+  if ! [ -s "$HOME/.nvm/nvm.sh" ];
     echo -e "Create nvm bin: ${BLUE}$HOME/.nvm${NC}"
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v$TARGET_NVM_VERSION/install.sh | bash
   fi
@@ -24,13 +21,11 @@ function create_nvm() {
 
 function create_nodejs() {
   NODE_INSTALLED_LIST=$(nvm ls)
-  if [[ $NODE_INSTALLED_LIST =~ $TARGET_NODE_VERSION ]]; then
-  else
+  if ! [[ $NODE_VERSION =~ $TARGET_NODE_VERSION ]]; then
     nvm install $TARGET_NODE_VERSION
   fi
   NODE_VERSION=$(node -v)
-  if [[ $NODE_VERSION =~ $TARGET_NODE_VERSION ]]; then
-  else
+  if ! [[ $NODE_INSTALLED_LIST =~ $TARGET_NODE_VERSION ]]; then
     nvm alias default $TARGET_NODE_VERSION
     nvm use default
   fi
@@ -39,8 +34,7 @@ function create_nodejs() {
 
 function create_pnpm() {
   PNPM_VERSION=$(pnpm -v)
-  if [ -s "$HOME/.nvm/versions/node/v$TARGET_NODE_VERSION/bin/pnpm"] && [[ $PNPM_VERSION =~ $TARGET_PNPM_VERSION ]]; then
-  else
+  if ! [ -s "$HOME/.nvm/versions/node/v$TARGET_NODE_VERSION/bin/pnpm"] && [[ $PNPM_VERSION =~ $TARGET_PNPM_VERSION ]]; then
     npm install -g pnpm@$TARGET_PNPM_VERSION
   fi
   pnpm install
