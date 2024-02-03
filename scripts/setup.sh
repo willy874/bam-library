@@ -9,7 +9,7 @@ TARGET_NODE_VERSION="20.11.0"
 TARGET_PNPM_VERSION="8.15.1"
 
 function create_nvm() {
-  if ! [ -s "$HOME/.nvm/nvm.sh" ];
+  if ! [ -s "$HOME/.nvm/nvm.sh" ]; then
     echo -e "Create nvm bin: ${BLUE}$HOME/.nvm${NC}"
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v$TARGET_NVM_VERSION/install.sh | bash
   fi
