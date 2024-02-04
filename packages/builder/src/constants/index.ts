@@ -35,6 +35,7 @@ export const ConsoleColors = {
 };
 
 export const NODEJS_EXTERNALS = [
+  'default',
   'assert',
   'async_hooks',
   'async_hooks',
@@ -47,6 +48,7 @@ export const NODEJS_EXTERNALS = [
   'dns',
   'domain',
   'fs',
+  'fs/promises',
   'http',
   'http2',
   'https',
