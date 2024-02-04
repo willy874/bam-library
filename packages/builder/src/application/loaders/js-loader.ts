@@ -55,11 +55,6 @@ function getSwcLoader(options: RuleSetRule, settings: DefaultSettings) {
   if (!isSwc(options)) {
     throw new Error('swc is not found');
   }
-  try {
-    require('swc-loader');
-  } catch (error) {
-    throw new Error('swc-loader is not found');
-  }
   return [
     {
       test: /\.(([cm]js)|([tj]sx?))$/,
