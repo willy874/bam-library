@@ -389,6 +389,9 @@ importers:
       webpack-chain:
         specifier: ^6.5.1
         version: 6.5.1
+      webpack-cli:
+        specifier: ^5.1.4
+        version: 5.1.4(webpack-dev-server@4.15.1)(webpack@5.89.0)
       webpack-dev-server:
         specifier: ^4.15.1
         version: 4.15.1(webpack-cli@5.1.4)(webpack@5.89.0)
@@ -426,9 +429,6 @@ importers:
       webpack:
         specifier: ^5.89.0
         version: 5.89.0(@swc/core@1.3.103)(esbuild@0.19.11)(webpack-cli@5.1.4)
-      webpack-cli:
-        specifier: ^5.1.4
-        version: 5.1.4(webpack-dev-server@4.15.1)(webpack@5.89.0)
 
   packages/button:
     dependencies:
