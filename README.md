@@ -14,10 +14,12 @@ npm run setup
 ## Folder Structure
 
   .
-  ├── ...
-  ├── apps                    # Documentation files (alternatively `doc`)
-  ├── modules                 # Documentation files (alternatively `doc`)
-  ├── packages                # Documentation files (alternatively `doc`)
-  ├── docs                    # Documentation files (alternatively `doc`)
-  │   └── ...                 # etc.
-  └── ...
+  ├── .vscode                 # VSCode settings
+  ├── apps                    # Test applications
+  │   └── [app_name]          #
+  ├── modules                 # Base package modules
+  │   └── [module_name]       #
+  ├── packages                # Core packages
+  │   └── [package_name]      #
+  ├── scripts                 # CI/CD scripts
+  └── package.json            #
