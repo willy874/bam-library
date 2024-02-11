@@ -37,7 +37,7 @@ function create_pnpm() {
   if ! [ -s "$HOME/.nvm/versions/node/v$TARGET_NODE_VERSION/bin/pnpm"] && [[ $PNPM_VERSION =~ $TARGET_PNPM_VERSION ]]; then
     npm install -g pnpm@$TARGET_PNPM_VERSION
   fi
-  pnpm install
+  pnpm reinstall
 }
 
 function handle_error() {
