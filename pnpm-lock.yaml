@@ -507,6 +507,39 @@ importers:
         specifier: ^5.2.2
         version: 5.3.3
 
+  packages/cssinjs:
+    devDependencies:
+      '@bam/builder':
+        specifier: workspace:*
+        version: link:../builder
+      '@bam/eslint-config':
+        specifier: workspace:*
+        version: link:../../modules/eslint-config
+      '@bam/eslint-plugin':
+        specifier: workspace:*
+        version: link:../../modules/eslint-plugin
+      '@bam/typescript-config':
+        specifier: workspace:*
+        version: link:../../modules/typescript-config
+      '@types/node':
+        specifier: ^20.10.0
+        version: 20.11.4
+      '@types/react':
+        specifier: ^18.2.46
+        version: 18.2.48
+      '@types/react-dom':
+        specifier: ^18.2.18
+        version: 18.2.18
+      rollup:
+        specifier: ^4.9.1
+        version: 4.9.5
+      rollup-plugin-dts:
+        specifier: ^6.1.0
+        version: 6.1.0(rollup@4.9.5)(typescript@5.3.3)
+      typescript:
+        specifier: ^5.2.2
+        version: 5.3.3
+
   packages/utils:
     dependencies:
       '@bam/lodash':
