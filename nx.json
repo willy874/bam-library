@@ -15,7 +15,13 @@
       "inputs": ["production", "^production"]
     },
     "build-storybook": {
-      "inputs": ["default", "^production", "{projectRoot}/.storybook/**/*", "{projectRoot}/tsconfig.storybook.json"]
+      "inputs": [
+        "default",
+        "^production",
+        "apps/ui-preview/.storybook/**/*",
+        "apps/ui-preview/tsconfig.storybook.json"
+      ],
+      "cache": true
     }
   },
   "namedInputs": {
@@ -31,5 +37,16 @@
   "workspaceLayout": {
     "appsDir": "apps",
     "libsDir": "packages"
-  }
+  },
+  "plugins": [
+    {
+      "plugin": "@nx/storybook/plugin",
+      "options": {
+        "buildStorybookTargetName": "build-storybook",
+        "serveStorybookTargetName": "storybook",
+        "testStorybookTargetName": "test-storybook",
+        "staticStorybookTargetName": "static-storybook"
+      }
+    }
+  ]
 }

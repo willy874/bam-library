@@ -1,0 +1,48 @@
+{
+  "name": "ui-preview",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "./apps/ui-preview/src",
+  "projectType": "application",
+  "targets": {
+    "builder": {
+      "0": "@",
+      "1": "n",
+      "2": "r",
+      "3": "w",
+      "4": "l",
+      "5": "/",
+      "6": "w",
+      "7": "e",
+      "8": "b",
+      "9": ":",
+      "10": "b",
+      "11": "u",
+      "12": "i",
+      "13": "l",
+      "14": "d"
+    },
+    "options": {},
+    "storybook": {
+      "executor": "@nx/storybook:storybook",
+      "options": {
+        "port": 6600,
+        "configDir": ".storybook"
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    }
+  },
+  "storybook": {
+    "builder": "@nrwl/storybook:storybook",
+    "options": {
+      "uiFramework": "@storybook/react-vite",
+      "port": 6600,
+      "config": {
+        "configFolder": ".storybook"
+      }
+    }
+  }
+}
