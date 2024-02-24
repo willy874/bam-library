@@ -13,17 +13,18 @@ export function getModuleFederationPlugin(options: ModuleFederationWebpackPlugin
         './web-components': defaultPath,
       }
     : {};
-  if (!appName) {
+  const exposesAppName = appName || options.name;
+  if (!exposesAppName) {
     return undefined;
   }
   return new webpack.container.ModuleFederationPlugin(
     deepmerge<ModuleFederationWebpackPluginOptions>(
       {
-        name: appName,
+        name: exposesAppName,
         filename: 'remoteEntry.js',
         library: {
           type: 'var',
-          name: appName,
+          name: exposesAppName,
         },
         exposes: defaultExposes,
       },

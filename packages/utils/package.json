@@ -2,12 +2,39 @@
   "name": "@bam/utils",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "",
   "license": "ISC",
+  "scripts": {
+    "build": "rollup -c",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/common/esm/main.js",
+      "require": "./dist/common/cjs/main.js",
+      "types": "./dist/common/types/main.d.ts"
+    },
+    "./base": {
+      "import": "./dist/base/esm/main.js",
+      "require": "./dist/base/cjs/main.js",
+      "types": "./dist/base/types/main.d.ts"
+    },
+    "./browser": {
+      "import": "./dist/browser/esm/main.js",
+      "require": "./dist/browser/cjs/main.js",
+      "types": "./dist/browser/types/main.d.ts"
+    },
+    "./node": {
+      "import": "./dist/node/esm/main.js",
+      "require": "./dist/node/cjs/main.js",
+      "types": "./dist/node/types/main.d.ts"
+    },
+    "./common": {
+      "import": "./dist/common/esm/main.js",
+      "require": "./dist/common/cjs/main.js",
+      "types": "./dist/common/types/main.d.ts"
+    }
+  },
   "dependencies": {
     "@bam/lodash": "workspace:*",
     "events": "^3.3.0",
@@ -15,12 +42,14 @@
     "lodash-es": "^4.17.21"
   },
   "devDependencies": {
+    "@bam/builder": "workspace:*",
     "@bam/eslint-config": "workspace:*",
     "@bam/eslint-plugin": "workspace:*",
     "@bam/typescript-config": "workspace:*",
     "@types/lodash": "^4.14.200",
     "@types/node": "^20.10.0",
     "eslint": "^8.52.0",
+    "rollup-plugin-dts": "^6.1.0",
     "typescript": "^5.2.2"
   }
 }
