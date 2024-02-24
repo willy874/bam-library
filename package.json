@@ -8,11 +8,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@nrwl/js": "^17.0.1",
-    "@nrwl/workspace": "^17.0.1",
-    "@nx/devkit": "^17.0.1",
-    "@nx/eslint-plugin": "^17.0.1",
-    "@nx/js": "18.0.4",
-    "nx": "^17.0.1"
+    "@nrwl/js": "^18.0.5",
+    "@nrwl/workspace": "^18.0.5",
+    "@nx/devkit": "^18.0.5",
+    "@nx/eslint-plugin": "^18.0.5",
+    "@nx/js": "18.0.5",
+    "nx": "^18.0.5"
   }
 }
