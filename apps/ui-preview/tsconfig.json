@@ -1,0 +1,28 @@
+{
+  "extends": "@bam/typescript-config/tsconfig.base.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "declaration": true,
+    "moduleResolution": "Node",
+    "outDir": "./dist",
+    "baseUrl": ".",
+    "rootDir": ".",
+    "lib": ["ESNext", "ScriptHost", "DOM", "DOM.Iterable"],
+    "types": ["react", "react-dom", "node"],
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.stories.tsx"
+  ],
+  "exclude": ["node_modules", "dist", "**/*.stories.ts", "**/*.stories.tsx"],
+  "references": [
+    {
+      "path": "./tsconfig.storybook.json"
+    }
+  ]
+}
