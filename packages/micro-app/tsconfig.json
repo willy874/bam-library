@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "baseUrl": ".",
+    "rootDir": ".",
+    "lib": ["DOM", "DOM.Iterable", "ESNext", "ScriptHost"],
+    "paths": {
+      "@/*": ["packages/*"]
+    }
+  },
+  "extends": "./node_modules/@bam/typescript-config/tsconfig.base.json",
+  "include": ["packages/**/*.ts", "packages/**/**/*.d.ts"],
+  "exclude": ["node_modules", "dist"]
+}
