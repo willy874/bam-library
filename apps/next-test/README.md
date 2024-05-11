@@ -34,3 +34,19 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## The example of Nextjs x Panda-css
+
+[Panda-css](https://panda-css.com/)
+Panda is a styling engine that generates styling primitives to author atomic CSS and recipes in a type-safe and readable manner.
+
+Panda combines the developer experience of CSS-in-JS and the performance of atomic CSS. It leverages static analysis to scan your JavaScript and TypeScript files for JSX style props and function calls, generating styles on-demand (aka Just-in-Time)
+
+TLDR; Panda is a CSS-in-JS engine that generates atomic CSS at build time (via CLI or PostCSS)
+
+Support:
+
+- Support server/client side render component
+- Support design token integration
+- Support Type-Safety
+- Support Used in any JavaScript framework.
