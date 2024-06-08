@@ -7,11 +7,8 @@
     "rootDir": ".",
     "lib": ["ESNext", "ScriptHost", "DOM", "DOM.Iterable"],
     "types": ["react", "react-dom", "node"],
-    "paths": {
-      "@/*": ["src/*"]
-    }
   },
-  "extends": "./node_modules/@bam/typescript-config/tsconfig.base.json",
+  "extends": "../../modules/typescript-config/tsconfig.base.json",
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx"],
   "exclude": ["node_modules", "dist"]
 }
