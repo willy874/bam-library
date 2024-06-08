@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@bam/button";
+import { Button } from "bam-ui";
 import { css } from "../../styled-system/css";
 import { getTheme, injectTheme } from "../../styled-system/themes";
 import { useState } from "react";
@@ -15,7 +15,6 @@ export default function ClientButton() {
   return (
     <Button
       className={className}
-      css={css}
       onClick={async () => {
         // Change the theme and the color of the button through className
         const current = document.documentElement.dataset.pandaTheme;
