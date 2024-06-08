@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "declaration": true,
+    "outDir": "./dist",
+    "baseUrl": ".",
+    "rootDir": ".",
+    "lib": ["ESNext", "ScriptHost", "DOM", "DOM.Iterable"],
+    "types": ["react", "react-dom", "node"],
+    "paths": {
+      "@/*": ["src/*"],
+      "@styled/*": ["styled-system/*"],
+    }
+  },
+  "extends": "../../modules/typescript-config/tsconfig.base.json",
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx"],
+  "exclude": ["node_modules", "dist"]
+}

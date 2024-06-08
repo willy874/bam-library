@@ -1,0 +1,38 @@
+{
+  "name": "bam-ui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/lib/main.js",
+  "module": "dist/es/main.js",
+  "types": "dist/types/main.d.ts",
+  "scripts": {
+    "build": "rollup -c",
+    "watch": "rollup -c --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "dependencies": {
+    "@pandacss/dev": "^0.39.1",
+    "@bam/button": "workspace:*",
+    "classnames": "^2.5.1"
+  },
+  "devDependencies": {
+    "@bam/builder": "workspace:*",
+    "@bam/eslint-config": "workspace:*",
+    "@bam/eslint-plugin": "workspace:*",
+    "@bam/typescript-config": "workspace:*",
+    "@bam/lodash": "workspace:*",
+    "@types/node": "^20.10.0",
+    "@types/react": "^18.2.46",
+    "@types/react-dom": "^18.2.18",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rollup": "^4.9.1",
+    "rollup-plugin-dts": "^6.1.0",
+    "typescript": "^5.2.2"
+  }
+}
