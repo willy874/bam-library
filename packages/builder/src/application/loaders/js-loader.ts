@@ -2,42 +2,43 @@ import { deepmerge } from '@/libs/utils';
 import type { RuleSetRule, SwcLoaderOptions } from '@/types/webpack';
 
 import type { DefaultSettings, JsLoaders } from '../types';
+import { isPackageInclude, requireResolve } from '@/utils/node/path';
 
 function getBabelLoader(_options: any, settings: DefaultSettings) {
   const { isDev, isProd } = settings;
   try {
     return [
       {
-        test: /\.(js|mjs|jsx|ts|tsx)$/,
-        loader: require.resolve('babel-loader'),
+        test: /\.(js|mjs)$/,
+        exclude: /@babel(?:\/|\\{1,2})runtime/,
+        loader: requireResolve('babel-loader'),
         options: {
-          customize: require.resolve('babel-preset-react-app/webpack-overrides'),
+          babelrc: false,
+          configFile: false,
+          compact: false,
+          presets: [[requireResolve('babel-preset-react-app'), { helpers: true }]],
+          cacheDirectory: true,
+          cacheCompression: false,
+          sourceMaps: isDev,
+          inputSourceMap: isDev,
+        },
+      },
+      {
+        test: /\.(js|mjs|jsx|ts|tsx)$/,
+        loader: requireResolve('babel-loader'),
+        options: {
+          customize: requireResolve('babel-preset-react-app/webpack-overrides'),
           presets: [
             [
-              require.resolve('babel-preset-react-app'),
+              requireResolve('babel-preset-react-app'),
               {
-                runtime: require.resolve('react/jsx-runtime') ? 'automatic' : 'classic',
+                runtime: isPackageInclude('react/jsx-runtime') ? 'automatic' : 'classic',
               },
             ],
           ],
           cacheDirectory: true,
           cacheCompression: false,
           compact: isProd,
-        },
-      },
-      {
-        test: /\.(js|mjs)$/,
-        exclude: /@babel(?:\/|\\{1,2})runtime/,
-        loader: require.resolve('babel-loader'),
-        options: {
-          babelrc: false,
-          configFile: false,
-          compact: false,
-          presets: [[require.resolve('babel-preset-react-app'), { helpers: true }]],
-          cacheDirectory: true,
-          cacheCompression: false,
-          sourceMaps: isDev,
-          inputSourceMap: isDev,
         },
       },
     ];
