@@ -16,7 +16,7 @@ function getBabelLoader(_options: any, settings: DefaultSettings) {
           babelrc: false,
           configFile: false,
           compact: false,
-          presets: [[requireResolve('babel-preset-react-app'), { helpers: true }]],
+          presets: [[requireResolve('@bam/react-babel'), { helpers: true }]],
           cacheDirectory: true,
           cacheCompression: false,
           sourceMaps: isDev,
@@ -27,10 +27,10 @@ function getBabelLoader(_options: any, settings: DefaultSettings) {
         test: /\.(js|mjs|jsx|ts|tsx)$/,
         loader: requireResolve('babel-loader'),
         options: {
-          customize: requireResolve('babel-preset-react-app/webpack-overrides'),
+          customize: requireResolve('@bam/react-babel/webpack-overrides'),
           presets: [
             [
-              requireResolve('babel-preset-react-app'),
+              requireResolve('@bam/react-babel'),
               {
                 runtime: isPackageInclude('react/jsx-runtime') ? 'automatic' : 'classic',
               },
@@ -43,7 +43,7 @@ function getBabelLoader(_options: any, settings: DefaultSettings) {
       },
     ];
   } catch (error) {
-    throw new Error('react and babel-preset-react-app is not found');
+    throw new Error('react and react-babel is not found');
   }
 }
 
@@ -92,8 +92,11 @@ function getSwcLoader(options: RuleSetRule, settings: DefaultSettings) {
 }
 
 export function getJsLoaders(options: JsLoaders | undefined, settings: DefaultSettings) {
+  // if (options === undefined) {
+  //   return getSwcLoader({ type: 'swc' }, settings);
+  // }
   if (options === undefined) {
-    return getSwcLoader({ type: 'swc' }, settings);
+    return getBabelLoader(options, settings);
   }
   if (Array.isArray(options)) {
     return options;

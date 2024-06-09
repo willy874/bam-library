@@ -1,8 +1,16 @@
 {
-  "name": "@bam/babel-preset-react-app",
+  "name": "@bam/react-babel",
   "version": "0.0.1",
   "description": "Babel preset used by Create React App",
   "main": "index.js",
+  "exports": {
+    ".": {
+      "require": "./index.js"
+    },
+    "./webpack-overrides": {
+      "require": "./webpack-overrides.js"
+    }
+  },
   "types": "types.d.ts",
   "dependencies": {
     "@babel/core": "^7.16.0",
@@ -22,7 +30,9 @@
     "@babel/preset-typescript": "^7.16.0",
     "@babel/runtime": "^7.16.3",
     "babel-plugin-macros": "^3.1.0",
-    "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.24"
+  },
+  "devDependencies": {
     "babel-preset-react-app": "^10.0.1"
   }
 }

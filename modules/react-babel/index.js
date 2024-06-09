@@ -1,8 +1,8 @@
-// require('babel-preset-react-app');
+'use strict';
 
-const fn = function (api, opts) {
-  const env = process.env.BABEL_ENV || process.env.NODE_ENV;
-  return require('./babel')(api, opts, env);
+const create = require('./create');
+
+module.exports = function (api, opts) {
+  const env = process.env.BABEL_ENV || process.env.NODE_ENV || 'production';
+  return create(api, opts, env);
 };
-
-module.exports = Object.assign(fn, { default: fn })
