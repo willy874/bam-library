@@ -1,3 +1,3 @@
 {
-  "extends": "@bam/typescript-config/tsconfig.base.json"
+  "extends": "./modules/typescript-config/tsconfig.base.json"
 }
