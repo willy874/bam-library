@@ -7,6 +7,10 @@
     "rootDir": ".",
     "lib": ["ESNext", "ScriptHost", "DOM", "DOM.Iterable"],
     "types": ["react", "react-dom", "node"],
+    "paths": {
+      "@/*": ["src/*"],
+      "@styled/*": ["styled-system/*"],
+    }
   },
   "extends": "../../modules/typescript-config/tsconfig.base.json",
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx"],
