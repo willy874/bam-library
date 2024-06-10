@@ -1,4 +1,4 @@
-import { Button } from "@bam/button";
+import { Button } from "bam-ui";
 import { css } from "../../styled-system/css";
 import ClientButton from "@/components/ClientButton";
 import { token } from "../../styled-system/tokens";

@@ -5,7 +5,9 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "@bam/eslint-config": "workspace:*",
-    "prettier": "^2.8.8"
+    "@bam/eslint-config": "workspace:*"
+  },
+  "peerDependencies": {
+    "prettier": "^3"
   }
 }

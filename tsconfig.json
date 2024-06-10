@@ -1,3 +1,0 @@
-{
-  "extends": "./modules/typescript-config/tsconfig.base.json"
-}
