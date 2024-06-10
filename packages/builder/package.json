@@ -25,12 +25,12 @@
     "eslint": "^8.52.0",
     "rollup": "^4.9.1",
     "typescript": "^5.2.2",
-    "webpack": "^5.89.0"
+    "webpack": "~5.89.0"
   },
   "dependencies": {
     "@babel/core": "^7.23.6",
-    "@bam/react-babel": "workspace:*",
     "@bam/lodash": "workspace:*",
+    "@bam/react-babel": "workspace:*",
     "@rollup/plugin-alias": "^5.1.0",
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-json": "^6.1.0",

@@ -34,7 +34,7 @@ module.exports = componentBuilder({
   },
   rollupConfiguration: [
     {
-      external: [/react\/*/],
+      external: [/^react\/*/],
     },
     {
       input: 'src/main.ts',
