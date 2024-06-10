@@ -8,10 +8,5 @@ module.exports = applicationBuilder({
       './App': './src/App',
     },
     library: { type: 'var', name: 'reactTemplate' },
-    shared: {
-      react: { singleton: true, requiredVersion: '^18.2.0', eager: true },
-      'react-dom': { singleton: true, requiredVersion: '^18.2.0', eager: true },
-      lodash: '^4.17.21',
-    },
   },
 });

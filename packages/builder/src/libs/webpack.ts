@@ -25,8 +25,6 @@ import 'postcss-flexbugs-fixes';
 import 'postcss-preset-env';
 import 'postcss-normalize';
 import '@babel/core';
-import 'babel-loader';
-import 'babel-preset-react-app';
 
 export {
   webpack,

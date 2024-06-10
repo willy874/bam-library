@@ -1,7 +1,7 @@
 import { NODEJS_EXTERNALS } from '@/constants';
 import { deepmerge } from '@/libs/utils';
 import { MaybePromise, getArgv, getEnvironment, ArgvType, EnvType } from '@/utils/variable';
-import { path, fs } from '@/utils/node';
+import { fs } from '@/utils/node';
 import { RollupOptions, OutputOptions } from 'rollup';
 import alias from '@rollup/plugin-alias';
 import type { RollupAliasOptions } from '@rollup/plugin-alias';
@@ -65,12 +65,7 @@ export function componentBuilder(params?: Config | ((env: EnvType, argv: ArgvTyp
           alias(
             deepmerge<RollupAliasOptions>(
               {
-                entries: [
-                  {
-                    find: '@',
-                    replacement: path.resolveRoot('src'),
-                  },
-                ],
+                entries: [],
               },
               config.alias || {},
             ),
