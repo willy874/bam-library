@@ -1,5 +1,5 @@
 import "./App.css";
-import { Button } from "@bam/button";
+import { Button } from "bam-ui";
 
 function App() {
   return (
@@ -7,7 +7,7 @@ function App() {
       <h1>bam-library</h1>
       <div className="card">
         <Button />
-        <p>@bam/button</p>
+        <p>bam-ui</p>
       </div>
     </>
   );
