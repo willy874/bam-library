@@ -7,7 +7,8 @@
   "types": "dist/types/main.d.ts",
   "scripts": {
     "build": "rollup -c",
-    "watch": "rollup -c --watch"
+    "watch": "rollup -c --watch",
+    "prepare": "panda codegen"
   },
   "author": "",
   "license": "ISC",
