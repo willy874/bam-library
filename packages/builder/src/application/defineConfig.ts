@@ -13,6 +13,7 @@ import { getDevServe, getNextPort } from './server';
 
 import type { Config, DefaultSettings } from './types';
 import { CssMinimizerPlugin, TerserWebpackPlugin } from '@/libs/webpack';
+import { getCatch } from './cache';
 
 function getDefaultSettings(
   env: Partial<Record<string, string>>,
@@ -92,6 +93,7 @@ export function applicationBuilder(
       performance: {
         hints: false,
       },
+      cache: getCatch(settings, env),
       optimization: {
         minimize: isProd,
         minimizer: [
@@ -125,10 +127,10 @@ export function applicationBuilder(
     const configurationChain = new WebpackChain();
     await webpackChain(configurationChain, baseWebpackConfiguration);
     const finalConfig = webpackMerge(baseWebpackConfiguration, webpackConfiguration, configurationChain.toConfig());
-    fs.promises.writeFile(
-      path.resolveRoot('node_modules', '.cache', 'config.json'),
-      JSON.stringify(finalConfig, null, 2),
-    );
+    // fs.promises.writeFile(
+    //   path.resolveRoot('node_modules', '.cache', 'config.json'),
+    //   JSON.stringify(finalConfig, null, 2),
+    // );
     for (const key in logs) {
       const result = logs[key](finalConfig);
       // eslint-disable-next-line no-console

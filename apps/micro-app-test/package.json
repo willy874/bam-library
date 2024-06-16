@@ -4,7 +4,8 @@
   "description": "",
   "scripts": {
     "watch": "webpack -w",
-    "serve": "webpack serve"
+    "serve": "webpack serve",
+    "build": "webpack"
   },
   "author": "",
   "license": "ISC",
