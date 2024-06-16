@@ -2,7 +2,7 @@ import WebpackChain from 'webpack-chain';
 import webpackMerge from 'webpack-merge';
 
 import type { WebpackConfig } from '@/types/webpack';
-import { ArgvType, EnvType, MaybePromise, fs, getArgv, getEnvironment, path } from '@/utils';
+import { ArgvType, EnvType, MaybePromise, getArgv, getEnvironment, path } from '@/utils';
 
 import { getAssetLoaders } from './loaders/assets-loader';
 import { getIcssLoader, getLocalCssLoader } from './loaders/css-loader';
