@@ -1,14 +1,5 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "tasksRunnerOptions": {
-    "default": {
-      "runner": "nx/tasks-runners/default",
-      "options": {
-        "cacheableOperations": ["build", "lint", "test", "build-storybook"],
-        "accessToken": "YjE2MTA4ZDYtZmQ5MC00OGMwLWFiNTktOGY0MmJiYWU0MzZhfHJlYWQtd3JpdGU="
-      }
-    }
-  },
   "targetDefaults": {
     "build": {
       "dependsOn": ["^build"],
@@ -23,13 +14,6 @@
       ],
       "cache": true
     }
-  },
-  "namedInputs": {
-    "default": ["{projectRoot}/**/*", "sharedGlobals"],
-    "production": [
-      "default"
-    ],
-    "sharedGlobals": []
   },
   "workspaceLayout": {
     "appsDir": "apps",
