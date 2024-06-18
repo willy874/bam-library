@@ -1,38 +1,19 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "tasksRunnerOptions": {
-    "default": {
-      "runner": "nx/tasks-runners/default",
-      "options": {
-        "cacheableOperations": ["build", "lint", "test", "build-storybook"],
-        "accessToken": "YjE2MTA4ZDYtZmQ5MC00OGMwLWFiNTktOGY0MmJiYWU0MzZhfHJlYWQtd3JpdGU="
-      }
-    }
-  },
   "targetDefaults": {
     "build": {
       "dependsOn": ["^build"],
-      "inputs": ["production", "^production"]
+      "inputs": ["production", "^production"],
+      "cache": true
     },
     "build-storybook": {
+      "dependsOn": ["^build"],
       "inputs": [
         "default",
-        "^production",
-        "apps/ui-preview/.storybook/**/*",
-        "apps/ui-preview/tsconfig.storybook.json"
+        "^production"
       ],
       "cache": true
     }
-  },
-  "namedInputs": {
-    "default": ["{projectRoot}/**/*", "sharedGlobals"],
-    "production": [
-      "default",
-      "!{projectRoot}/**/*.stories.@(js|jsx|ts|tsx|mdx)",
-      "!{projectRoot}/.storybook/**/*",
-      "!{projectRoot}/tsconfig.storybook.json"
-    ],
-    "sharedGlobals": []
   },
   "workspaceLayout": {
     "appsDir": "apps",
@@ -40,12 +21,10 @@
   },
   "plugins": [
     {
-      "plugin": "@nx/storybook/plugin",
+      "plugin": "@nx/eslint-plugin",
       "options": {
-        "buildStorybookTargetName": "build-storybook",
-        "serveStorybookTargetName": "storybook",
-        "testStorybookTargetName": "test-storybook",
-        "staticStorybookTargetName": "static-storybook"
+        "linter": "eslint",
+        "projectType": "library"
       }
     }
   ]

@@ -1,3 +1,0 @@
-{
-  "extends": "@bam/typescript-config/tsconfig.base.json"
-}

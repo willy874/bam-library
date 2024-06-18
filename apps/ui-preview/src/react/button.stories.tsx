@@ -1,4 +1,4 @@
-import { Button } from "@bam/button";
+import { Button } from "bam-ui";
 import type { Meta, StoryFn } from "@storybook/react";
 import { ButtonHTMLAttributes } from "react";
 

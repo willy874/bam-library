@@ -27,7 +27,7 @@ const validateBoolOption = (name, value, defaultValue) => {
  * @param {'development' | 'production' | 'test'} env
  * @returns
  */
-module.exports = function (_, opts, env) {
+module.exports = function (_, opts, env = 'test') {
   if (!opts) {
     opts = {};
   }

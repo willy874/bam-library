@@ -2,21 +2,37 @@ import { deepmerge } from '@/libs/utils';
 import type { RuleSetRule, SwcLoaderOptions } from '@/types/webpack';
 
 import type { DefaultSettings, JsLoaders } from '../types';
+import { isPackageInclude, requireResolve } from '@/utils/node/path';
 
 function getBabelLoader(_options: any, settings: DefaultSettings) {
   const { isDev, isProd } = settings;
   try {
     return [
       {
-        test: /\.(js|mjs|jsx|ts|tsx)$/,
-        loader: require.resolve('babel-loader'),
+        test: /\.(js|mjs)$/,
+        exclude: /@babel(?:\/|\\{1,2})runtime/,
+        loader: requireResolve('babel-loader'),
         options: {
-          customize: require.resolve('babel-preset-react-app/webpack-overrides'),
+          babelrc: false,
+          configFile: false,
+          compact: false,
+          presets: [[requireResolve('@bam/react-babel'), { helpers: true }]],
+          cacheDirectory: true,
+          cacheCompression: false,
+          sourceMaps: isDev,
+          inputSourceMap: isDev,
+        },
+      },
+      {
+        test: /\.(js|mjs|jsx|ts|tsx)$/,
+        loader: requireResolve('babel-loader'),
+        options: {
+          customize: requireResolve('@bam/react-babel/webpack-overrides'),
           presets: [
             [
-              require.resolve('babel-preset-react-app'),
+              requireResolve('@bam/react-babel'),
               {
-                runtime: require.resolve('react/jsx-runtime') ? 'automatic' : 'classic',
+                runtime: isPackageInclude('react/jsx-runtime') ? 'automatic' : 'classic',
               },
             ],
           ],
@@ -25,24 +41,9 @@ function getBabelLoader(_options: any, settings: DefaultSettings) {
           compact: isProd,
         },
       },
-      {
-        test: /\.(js|mjs)$/,
-        exclude: /@babel(?:\/|\\{1,2})runtime/,
-        loader: require.resolve('babel-loader'),
-        options: {
-          babelrc: false,
-          configFile: false,
-          compact: false,
-          presets: [[require.resolve('babel-preset-react-app'), { helpers: true }]],
-          cacheDirectory: true,
-          cacheCompression: false,
-          sourceMaps: isDev,
-          inputSourceMap: isDev,
-        },
-      },
     ];
   } catch (error) {
-    throw new Error('react and babel-preset-react-app is not found');
+    throw new Error('react and react-babel is not found');
   }
 }
 
@@ -91,8 +92,11 @@ function getSwcLoader(options: RuleSetRule, settings: DefaultSettings) {
 }
 
 export function getJsLoaders(options: JsLoaders | undefined, settings: DefaultSettings) {
+  // if (options === undefined) {
+  //   return getSwcLoader({ type: 'swc' }, settings);
+  // }
   if (options === undefined) {
-    return getSwcLoader({ type: 'swc' }, settings);
+    return getBabelLoader(options, settings);
   }
   if (Array.isArray(options)) {
     return options;

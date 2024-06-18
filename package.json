@@ -4,16 +4,19 @@
   "scripts": {
     "build": "sh ./scripts/build.sh",
     "reinstall": "sh ./scripts/reinstall.sh",
-    "setup": "sh ./scripts/setup.sh"
+    "setup": "sh ./scripts/setup.sh",
+    "graph": "pnpm exec nx graph          "
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@bam/eslint-config": "workspace:^",
+    "@bam/eslint-plugin": "workspace:^",
     "@nrwl/js": "^18.0.5",
     "@nrwl/workspace": "^18.0.5",
     "@nx/devkit": "^18.0.5",
     "@nx/eslint-plugin": "^18.0.5",
     "@nx/js": "18.0.5",
-    "nx": "^18.0.5"
+    "nx": "^18.0.8"
   }
 }
