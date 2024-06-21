@@ -5,8 +5,8 @@ BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 PWD=$(pwd)
 TARGET_NVM_VERSION="0.39.0"
-TARGET_NODE_VERSION="20.11.0"
-TARGET_PNPM_VERSION="8.15.1" # "9.1.0"
+TARGET_NODE_VERSION="v20.11.0"
+TARGET_PNPM_VERSION="8.15.1"
 
 function create_nvm() {
   if ! [ -s "$HOME/.nvm/nvm.sh" ]; then
@@ -21,13 +21,15 @@ function create_nvm() {
 
 function create_nodejs() {
   NODE_INSTALLED_LIST=$(nvm ls)
-  if ! [[ $NODE_VERSION =~ $TARGET_NODE_VERSION ]]; then
+  if ! [[ $NODE_INSTALLED_LIST =~ $TARGET_NODE_VERSION ]]; then
+    echo -e "Installing Node.js version: ${BLUE}$TARGET_NODE_VERSION${NC}"
     nvm install $TARGET_NODE_VERSION
   fi
   NODE_VERSION=$(node -v)
-  if ! [[ $NODE_INSTALLED_LIST =~ $TARGET_NODE_VERSION ]]; then
+  if ! [[ $NODE_VERSION =~ $TARGET_NODE_VERSION ]]; then
+    echo -e "Setting Node.js version as default: ${BLUE}$TARGET_NODE_VERSION${NC}"
     nvm alias default $TARGET_NODE_VERSION
-    nvm use default
+    nvm use
   fi
   echo -e "Node.js version: ${BLUE}$NODE_VERSION${NC}"
 }
@@ -41,8 +43,6 @@ function create_pnpm() {
 
   # Print pnpm version
   echo "PNPM Version: $(pnpm -v)"
-  # Print pnpm path
-  echo "PNPM Path: $(which pnpm)"
 
   pnpm reinstall
 }
@@ -62,3 +62,13 @@ function setup() {
 }
 
 setup
+
+# Refresh the shell environment
+echo -e "${YELLOW}Refreshing shell environment...${NC}"
+CURRENT_SHELL=$(basename "$SHELL")
+if [ "$CURRENT_SHELL" == "bash" ]; then
+  source ~/.bashrc
+elif [ "$CURRENT_SHELL" == "zsh" ]; then
+  source ~/.zshrc
+fi
+echo -e "${GREEN}Shell environment refreshed.${NC}"
