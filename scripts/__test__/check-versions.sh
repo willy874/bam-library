@@ -70,5 +70,3 @@ fi
 check_nvm_exists
 test_version "node" $TARGET_NODE_VERSION
 test_version "pnpm" $TARGET_PNPM_VERSION
-
-
