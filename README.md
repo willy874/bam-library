@@ -1,6 +1,6 @@
 # Bam Library
 
-## Introduction
+## Introduction (EN)
 
 This is a powerful and flexible frontend UI library with the following features:
 
@@ -28,6 +28,35 @@ To provide better SEO performance and faster initial rendering times, this UI li
 ### Conclusion
 
 By supporting Theme System and Headless, framework-agnostic core state management and utility libraries, micro frontends, and SSR, this frontend UI library offers developers exceptional flexibility and powerful features. Whether for small projects or large applications, it can meet your needs and significantly boost development efficiency.
+
+## 介紹 (CH)
+
+這是一款功能強大且靈活的前端 UI 庫，具備以下特性：
+
+- 支援 Theme System 和 Headless
+- 核心狀態管理和核心作用庫可以跨框架使用
+- 支援微前端
+- 支援 Server Side Render (SSR)
+
+### 支援 Theme System 和 Headless
+
+此 UI 庫提供靈活的 Theme System，讓開發者可以根據需求自定義和切換主題。你可以輕鬆地定制配色方案、字體和其他樣式，從而實現品牌一致性和用戶體驗的個性化。同時，它也支援 Headless 模式，使得開發者可以完全控制 UI 的結構和行為，只利用其核心功能來實現自定義的外觀和交互。
+
+### 跨框架的核心狀態管理和核心作用庫
+
+我們的 UI 庫的核心狀態管理和作用庫設計得非常靈活，可以無縫地在多個框架中使用。無論你使用的是 React、Vue.js 還是 Angular，都可以輕鬆地集成這些核心功能，從而在不同的項目中保持一致的開發體驗和性能優勢。這種跨框架的設計大大提升了開發效率，減少了學習成本。
+
+### 支援微前端
+
+這款 UI 庫完全支援微前端架構，使得開發者可以將大型應用拆分成獨立的小型前端模塊，每個模塊可以由不同的團隊獨立開發、測試和部署。這不僅提高了開發效率，還增強了應用的可維護性和可擴展性。
+
+### 支援 Server Side Render (SSR)
+
+為了提供更好的 SEO 效果和更快的初次渲染時間，這款 UI 庫內建了對 Server Side Render（SSR）的支援。通過 SSR，頁面可以在服務器端生成 HTML，然後發送到客戶端，從而縮短用戶首次加載的時間，並改善整體用戶體驗。無論是構建內容驅動的網站還是複雜的應用程序，SSR 的支援都能帶來顯著的性能提升。
+
+### 總結
+
+這款前端 UI 庫通過支援 Theme System 和 Headless、跨框架的核心狀態管理和作用庫、微前端和 SSR，為開發者提供了極高的靈活性和強大的功能。無論是小型項目還是大型應用，它都能滿足你的需求，並大大提升開發效率。
 
 ## Environment
 
