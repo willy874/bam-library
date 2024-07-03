@@ -3,8 +3,7 @@
   "version": "0.0.1",
   "description": "",
   "scripts": {
-    "dev": "storybook -p 6006",
-    "build": "storybook build"
+    "dev": "storybook -p 6006"
   },
   "author": "",
   "dependencies": {

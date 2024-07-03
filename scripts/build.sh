@@ -14,4 +14,4 @@ for dir in $root/packages/* ; do
   [ -L "${dir}" ] && continue
   rm_directorie ${dir}/dist
 done
-pnpm exec -- nx run-many --target=build --all
+pnpm exec nx run-many --target=build --all
