@@ -1,9 +1,10 @@
 {
-  "extends": "@bam/typescript-config/tsconfig.base.json",
+  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "jsx": "react-jsx",
     "declaration": true,
     "moduleResolution": "Node",
+    "emitDecoratorMetadata": true,
     "outDir": "./dist",
     "baseUrl": ".",
     "rootDir": ".",
@@ -14,15 +15,13 @@
     }
   },
   "include": [
-    "src/**/*.ts",
-    "src/**/*.d.ts",
-    "src/**/*.tsx",
-    "src/**/*.stories.tsx"
+    "src/**/*.stories.ts",
+    "src/**/*.stories.js",
+    "src/**/*.stories.jsx",
+    "src/**/*.stories.tsx",
+    "src/**/*.stories.mdx",
+    ".storybook/*.js",
+    ".storybook/*.ts"
   ],
-  "exclude": ["node_modules", "dist", "**/*.stories.ts", "**/*.stories.tsx"],
-  "references": [
-    {
-      "path": "./tsconfig.storybook.json"
-    }
-  ]
+  "exclude": ["node_modules", "dist", "**/*.stories.ts", "**/*.stories.tsx"]
 }

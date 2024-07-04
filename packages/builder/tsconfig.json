@@ -9,7 +9,7 @@
       "@/*": ["src/*"]
     }
   },
-  "extends": "./node_modules/@bam/typescript-config/tsconfig.base.json",
+  "extends": "../../tsconfig.base.json",
   "include": ["src/**/*.ts", "src/**/*.d.ts", "types/*.d.ts"],
   "exclude": ["node_modules", "dist"]
 }

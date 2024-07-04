@@ -12,7 +12,7 @@
       "@common/*": ["packages/common/*"]
     }
   },
-  "extends": "./node_modules/@bam/typescript-config/tsconfig.base.json",
+  "extends": "../../tsconfig.base.json",
   "include": ["packages/**/*.ts", "packages/**/**/*.d.ts"],
   "exclude": ["node_modules", "dist"]
 }

@@ -8,7 +8,7 @@
     "lib": ["ESNext", "ScriptHost", "DOM", "DOM.Iterable"],
     "types": ["react", "react-dom", "node"],
   },
-  "extends": "../../modules/typescript-config/tsconfig.base.json",
+  "extends": "../../tsconfig.base.json",
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx"],
   "exclude": ["node_modules", "dist"]
 }

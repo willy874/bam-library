@@ -12,7 +12,7 @@
       "@styled/*": ["styled-system/*"],
     }
   },
-  "extends": "../../modules/typescript-config/tsconfig.base.json",
+  "extends": "../../tsconfig.base.json",
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx"],
   "exclude": ["node_modules", "dist"]
 }
