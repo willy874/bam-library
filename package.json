@@ -2,10 +2,10 @@
   "name": "bam-library",
   "version": "1.0.0",
   "scripts": {
-    "build": "sh ./scripts/build.sh",
+    "build": "pnpm exec nx run-many --target=build --all",
     "reinstall": "sh ./scripts/reinstall.sh",
     "setup": "sh ./scripts/setup.sh",
-    "graph": "pnpm exec nx graph          "
+    "graph": "pnpm exec nx graph"
   },
   "author": "",
   "license": "ISC",

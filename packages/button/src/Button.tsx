@@ -1,5 +1,4 @@
 import React from 'react';
-import cn from 'classnames';
 import { useForkRef } from './utils/ref';
 import { PolymorphicProps } from './utils/types';
 import Box from './Box';
@@ -14,7 +13,7 @@ const ForwardButton = function Button<RootComponentType extends React.ElementTyp
   props: ButtonProps<RootComponentType>,
   forwardedRef: React.ForwardedRef<Element>,
 ) {
-  const { children, className, classNames, action, slots = {}, ...rest } = props;
+  const { children, className, action, slots = {}, slotProps = {}, ...rest } = props;
   const rootRef = React.useRef<HTMLElement>(null);
   const ref = useForkRef(rootRef, forwardedRef);
   React.useImperativeHandle(
@@ -32,10 +31,12 @@ const ForwardButton = function Button<RootComponentType extends React.ElementTyp
   const { prefix: Prefix, suffix: Suffix, content: Content } = slots;
 
   return (
-    <Box component="button" ref={ref} className={cn(className, classNames.root)} {...rest}>
-      <Box component={Prefix || 'span'} />
-      <Box component={Content || 'span'}>{children}</Box>
-      <Box component={Suffix || 'span'} />
+    <Box component="button" ref={ref} className={className} {...rest}>
+      <Box component={Prefix || 'span'} {...slotProps.prefix} />
+      <Box component={Content || 'span'} {...slotProps.content}>
+        {children}
+      </Box>
+      <Box component={Suffix || 'span'} {...slotProps.suffix} />
     </Box>
   );
 };

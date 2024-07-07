@@ -1,6 +1,6 @@
 import { Button } from "bam-ui";
 import type { Meta, StoryFn } from "@storybook/react";
-import { ButtonHTMLAttributes } from "react";
+import React, { ButtonHTMLAttributes } from "react";
 
 const meta: Meta<typeof Button> = {
   title: "UI/Button",
