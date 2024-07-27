@@ -4,6 +4,7 @@ import { PolymorphicProps } from './utils/types';
 
 interface BoxOwnProps {
   component?: React.ElementType;
+  slots?: Record<string, React.ElementType>;
 }
 
 type ButtonProps<RootComponentType extends React.ElementType = 'div'> = PolymorphicProps<
@@ -15,7 +16,7 @@ const ForwardBox = React.forwardRef(function Box<RootComponentType extends React
   props: ButtonProps<RootComponentType>,
   forwardedRef: React.ForwardedRef<Element>,
 ) {
-  const { children, className, component = 'div', slots, ...rest } = props;
+  const { children, className, component = 'div', slots = {}, ...rest } = props;
 
   const Root = slots.root || component;
 
