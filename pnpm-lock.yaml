@@ -450,6 +450,12 @@ importers:
       react-dom:
         specifier: ^18.2.0
         version: 18.3.1(react@18.3.1)
+      rollup:
+        specifier: ^4.9.1
+        version: 4.18.0
+      rollup-plugin-dts:
+        specifier: ^6.1.0
+        version: 6.1.1(rollup@4.18.0)(typescript@5.3.3)
       typescript:
         specifier: ^5.2.2
         version: 5.3.3
@@ -11948,24 +11954,13 @@ snapshots:
       - typescript
       - verdaccio
 
+  '@nrwl/js@18.3.5':
+    dependencies:
+      '@nx/js': 18.3.5(@babel/traverse@7.24.7)(@swc-node/register@1.8.0(@swc/core@1.6.0(@swc/helpers@0.5.11))(@swc/types@0.1.8)(typescript@5.4.5))(@swc/core@1.6.0(@swc/helpers@0.5.11))(@types/node@20.14.2)(nx@18.3.5(@swc-node/register@1.8.0(@swc/core@1.6.0(@swc/helpers@0.5.11))(@swc/types@0.1.8)(typescript@5.4.5))(@swc/core@1.6.0(@swc/helpers@0.5.11)))(typescript@5.4.5)
+
   '@nrwl/js@18.3.5(@babel/traverse@7.24.7)(@swc-node/register@1.8.0(@swc/core@1.3.107(@swc/helpers@0.5.11))(@swc/types@0.1.8)(typescript@5.3.3))(@swc/core@1.3.107(@swc/helpers@0.5.11))(@types/node@20.14.2)(nx@18.0.4(@swc-node/register@1.8.0(@swc/core@1.3.107(@swc/helpers@0.5.11))(@swc/types@0.1.8)(typescript@5.3.3))(@swc/core@1.3.107(@swc/helpers@0.5.11)))(typescript@5.3.3)':
     dependencies:
       '@nx/js': 18.3.5(@babel/traverse@7.24.7)(@swc-node/register@1.8.0(@swc/core@1.3.107(@swc/helpers@0.5.11))(@swc/types@0.1.8)(typescript@5.3.3))(@swc/core@1.3.107(@swc/helpers@0.5.11))(@types/node@20.14.2)(nx@18.0.4(@swc-node/register@1.8.0(@swc/core@1.3.107(@swc/helpers@0.5.11))(@swc/types@0.1.8)(typescript@5.3.3))(@swc/core@1.3.107(@swc/helpers@0.5.11)))(typescript@5.3.3)
-    transitivePeerDependencies:
-      - '@babel/traverse'
-      - '@swc-node/register'
-      - '@swc/core'
-      - '@swc/wasm'
-      - '@types/node'
-      - debug
-      - nx
-      - supports-color
-      - typescript
-      - verdaccio
-
-  '@nrwl/js@18.3.5(@babel/traverse@7.24.7)(@swc-node/register@1.8.0(@swc/core@1.3.107(@swc/helpers@0.5.11))(@swc/types@0.1.8)(typescript@5.3.3))(@swc/core@1.3.107(@swc/helpers@0.5.11))(@types/node@20.14.2)(nx@18.0.4(@swc-node/register@1.8.0(@swc/core@1.3.107(@swc/helpers@0.5.11))(@swc/types@0.1.8)(typescript@5.3.3))(@swc/core@1.3.107(@swc/helpers@0.5.11)))(typescript@5.4.5)':
-    dependencies:
-      '@nx/js': 18.3.5(@babel/traverse@7.24.7)(@swc-node/register@1.8.0(@swc/core@1.3.107(@swc/helpers@0.5.11))(@swc/types@0.1.8)(typescript@5.3.3))(@swc/core@1.3.107(@swc/helpers@0.5.11))(@types/node@20.14.2)(nx@18.0.4(@swc-node/register@1.8.0(@swc/core@1.3.107(@swc/helpers@0.5.11))(@swc/types@0.1.8)(typescript@5.3.3))(@swc/core@1.3.107(@swc/helpers@0.5.11)))(typescript@5.4.5)
     transitivePeerDependencies:
       - '@babel/traverse'
       - '@swc-node/register'
@@ -12392,7 +12387,7 @@ snapshots:
       '@babel/preset-env': 7.24.7(@babel/core@7.24.7)
       '@babel/preset-typescript': 7.24.7(@babel/core@7.24.7)
       '@babel/runtime': 7.24.7
-      '@nrwl/js': 18.3.5(@babel/traverse@7.24.7)(@swc-node/register@1.8.0(@swc/core@1.3.107(@swc/helpers@0.5.11))(@swc/types@0.1.8)(typescript@5.3.3))(@swc/core@1.3.107(@swc/helpers@0.5.11))(@types/node@20.14.2)(nx@18.0.4(@swc-node/register@1.8.0(@swc/core@1.3.107(@swc/helpers@0.5.11))(@swc/types@0.1.8)(typescript@5.3.3))(@swc/core@1.3.107(@swc/helpers@0.5.11)))(typescript@5.4.5)
+      '@nrwl/js': 18.3.5
       '@nx/devkit': 18.3.5(nx@18.0.4(@swc-node/register@1.8.0(@swc/core@1.3.107(@swc/helpers@0.5.11))(@swc/types@0.1.8)(typescript@5.3.3))(@swc/core@1.3.107(@swc/helpers@0.5.11)))
       '@nx/workspace': 18.3.5(@swc-node/register@1.8.0(@swc/core@1.3.107(@swc/helpers@0.5.11))(@swc/types@0.1.8)(typescript@5.3.3))(@swc/core@1.3.107(@swc/helpers@0.5.11))
       '@phenomnomnominal/tsquery': 5.0.1(typescript@5.4.5)
