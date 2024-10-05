@@ -4,23 +4,86 @@ import starlight from '@astrojs/starlight';
 
 // https://astro.build/config
 export default defineConfig({
+	title: 'Bam Library',
+	social: {
+		github: 'https://github.com/willy874/bam-library',
+	},
 	integrations: [
 		starlight({
-			title: 'My Docs',
+			title: 'Bam Library',
 			social: {
-				github: 'https://github.com/withastro/starlight',
+				github: 'https://github.com/willy874/bam-library',
 			},
 			sidebar: [
 				{
-					label: 'Guides',
-					items: [
-						// Each item here is one entry in the navigation menu.
-						{ label: 'Example Guide', slug: 'guides/example' },
-					],
+					label: 'About',
+					autogenerate: { directory: 'about' },
 				},
 				{
-					label: 'Reference',
-					autogenerate: { directory: 'reference' },
+					label: 'Guides',
+					items: [{
+						label: 'Getting Started',
+						slug: 'guides/get_started'
+					}],
+				},
+				{
+					label: 'Config',
+					items: [{
+						label: 'Getting Started',
+						slug: 'config/example'
+					}],
+				},
+				{
+					label: 'Components',
+					items: [{
+						label: 'General',
+						items: [{
+							label: 'Button',
+							slug: 'components/general/button'
+						}]
+					},
+					{
+						label: 'Layout',
+						items: [{
+							label: 'Flex',
+							slug: 'components/layout/flex'
+						}],
+					},
+					{
+						label: 'Form',
+						items: [{
+							label: 'Checkbox',
+							slug: 'components/form/checkbox'
+						}],
+					},
+					{
+						label: 'Navigation',
+						items: [{
+							label: 'Navbar',
+							slug: 'components/navigation/navbar'
+						}],
+					},
+					{
+						label: 'Data',
+						items: [{
+							label: 'Date Picker',
+							slug: 'components/data/date_picker'
+						}],
+					},
+					{
+						label: 'Feedback',
+						items: [{
+							label: 'Alert',
+							slug: 'components/feedback/alert'
+						}],
+					},
+					{
+						label: 'Other',
+						items: [{
+							label: '',
+							slug: ''
+						}],
+					}]
 				},
 			],
 		}),
