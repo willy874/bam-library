@@ -1,0 +1,37 @@
+---
+title: Welcome to Bam Library
+description: Get started building your docs site with Starlight.
+template: splash
+hero:
+  tagline: This is a powerful and flexible frontend UI library
+  image:
+    file: ../../assets/houston.webp
+  actions:
+    - text: Getting Started
+      link: /guides/get_started/
+      icon: right-arrow
+    # - text: Read the Starlight docs
+    #  link: https://starlight.astro.build
+    #  icon: external
+    # variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+<CardGrid stagger>
+	<Card class="bg-red-500" title="Supports Theme System and Headless" icon="puzzle">
+		Easily tailor color schemes, fonts,
+    and other styles.
+    Additionally, it supports Headless mode, utilizing only its core functionalities to create custom appearances and interactions.
+	</Card>
+	<Card title="Framework-agnostic" icon="add-document">
+		Core state management and utility libraries are framework-agnostic.
+    Whether you are using React, Vue.js, or Angular, you can effortlessly integrate these core functionalities.
+	</Card>
+	<Card title="Supports Micro Frontends" icon="setting">
+		Allowing developers to break down large applications into independent, smaller frontend modules
+	</Card>
+	<Card title="Supports Server Side Render" icon="open-book">
+		To provide better SEO performance and faster initial rendering times, this UI library comes with built-in support for Server Side Render.
+	</Card>
+</CardGrid>
