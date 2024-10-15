@@ -11,10 +11,9 @@ const Portal = React.forwardRef<HTMLDivElement, PortalProps>((props, portalRef) 
   const { children, container: containerProps, ...restPortalProps } = props;
   const [mounted, setMounted] = React.useState(false);
 
-  // Make sure the portal is mounted after the first render
   React.useLayoutEffect(() => setMounted(true), []);
 
-  const container = containerProps || (mounted && window?.document?.body);
+  const container = containerProps || (mounted && globalThis?.document?.body);
 
   return container
     ? createPortal(
